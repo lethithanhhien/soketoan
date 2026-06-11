@@ -1,0 +1,106 @@
+<!doctype html><html lang=vi><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="color-scheme" content="light">
+<title>Sổ công nợ — Rau Korea</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{color-scheme:light}
+body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#fff;color:#161616;font-size:15px}
+.wrap{max-width:560px;margin:0 auto;background:#fff;min-height:100vh}
+.gbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:11px 10px 4px;background:#fff;border-bottom:1px solid #eee}
+.gbar .glbl{font-size:12px;color:#888;margin-right:2px}
+.gbar .gt{font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid #1F6E43;color:#1F6E43;background:#fff;text-decoration:none}
+.gbar .gt.on{background:#1F6E43;color:#fff}
+.tabs{position:sticky;top:0;display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff;border-bottom:1px solid #e3e3e3;z-index:5}
+.dash{display:block}
+.tab{flex:0 0 auto;font-size:13px;padding:7px 13px;border-radius:999px;border:1px solid #d4d4d4;background:#fff;color:#555}
+.tab.on{background:#1F6E43;color:#fff;border-color:#1F6E43;font-weight:600}
+.mfilter{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px}
+.mf{font-size:12px;padding:5px 13px;border-radius:999px;border:1px solid #d4d4d4;background:#fff;color:#555;cursor:pointer}
+.mf.on{background:#1F6E43;color:#fff;border-color:#1F6E43;font-weight:600}
+.pg{display:none;padding:14px}.pg.on{display:block}
+h1{font-size:19px;margin:4px 0 2px;color:#1F6E43}.sub{margin:0 0 12px;color:#555;font-size:12px}
+.card{border:1px solid #cfcfcf;border-radius:10px;overflow:hidden;margin-bottom:12px}
+.ct{font-weight:600;font-size:14px;padding:9px 12px;color:#fff}
+.card.red .ct{background:#C00000}.card.grn .ct{background:#1F6E43}.card.blu .ct{background:#1F4E78}.card.teal .ct{background:#DB2777}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:7px 10px;border:1px solid #cfcfcf;text-align:left}
+.det tr.it{cursor:pointer}.det tr.it:active td,.det tr.it:hover td{background:#eef6ea}
+.det tr.it td:first-child{color:#1155CC;font-weight:700}
+th{background:#ebeeea;font-size:11px;color:#3a3a3a;font-weight:700}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#111}
+.cur{color:#5a5a5a;font-size:12px;text-align:center;width:42px}
+.tot td{font-weight:700;background:#edf0ec}
+.card.red .tot td{color:#C00000}.card.grn .tot td{color:#1F6E43}.card.blu .tot td{color:#1F4E78}.card.teal .tot td{color:#DB2777}
+.dcsub td{font-weight:700;background:#eaf0f6;color:#1F4E78;border-top:2px solid #b9c9dc}
+.dchead td{font-weight:700;background:#1F4E78;color:#fff;font-size:12px;letter-spacing:.3px}
+.card.grn .dchead td{background:#1F6E43}
+.card.grn .dcsub td{background:#eaf2ec;color:#1F6E43;border-top-color:#bcd4c4}
+.card.teal .dchead td{background:#DB2777}
+.card.teal .dcsub td{background:#fbe6f0;color:#DB2777;border-top-color:#f2c2d8}
+a{color:#1155CC;text-decoration:none;font-weight:600}
+.note{font-size:11px;color:#666;margin:6px 2px;font-style:italic}
+.blk{border:1px solid #cfcfcf;border-radius:10px;overflow:hidden;margin:12px 0}
+.bh{padding:9px 12px;font-size:13px;font-weight:600}
+.blk.ok .bh{background:#1F6E43;color:#fff}.blk.no .bh{background:#C00000;color:#fff}
+.blk.self .bh{background:#1F4E78;color:#fff}.blk.thu .bh{background:#DB2777;color:#fff}
+.bh .cgflag{color:#FFD56B}
+.nogia{color:#999;font-style:italic;font-weight:400}
+.cgflag{color:#B26A00;font-weight:700;font-size:12px}
+table.det td{font-size:13px}.det .qn{text-align:right;color:#1F4E78;font-style:italic}
+.det .dh th{background:#ebeeea;color:#3a3a3a;font-size:11px;font-weight:700;padding:5px 8px}
+.imgc{text-align:center;width:52px;padding:3px}
+.thumb{width:38px;height:38px;object-fit:cover;border:1px solid #ccc;border-radius:5px;cursor:zoom-in;vertical-align:middle}
+.det .qd.won .qn,.det .qd.won .num{color:#1F4E78;font-weight:700;font-style:normal}
+.ev{font-size:12px;color:#4a4a4a;padding:8px 12px;border-top:1px solid #dcdcdc;background:#f7f7f5}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px}
+figure{margin:0;cursor:zoom-in}figure img{width:100%;border:1px solid #ddd;border-radius:6px;display:block}
+figcaption{font-size:10px;color:#999;margin-top:2px;line-height:1.2}
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;align-items:center;justify-content:center;flex-direction:column}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:88vh;object-fit:contain}
+#lb .x{position:fixed;top:14px;right:18px;color:#fff;font-size:30px}
+#evp{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:60;align-items:center;justify-content:center;padding:22px}
+#evp.on{display:flex}
+.evbox{background:#fff;border-radius:12px;padding:18px 20px;max-width:430px;width:100%;line-height:1.5}
+.evbox .eb{margin-top:14px;padding:8px 18px;border:none;border-radius:8px;background:#1F6E43;color:#fff;font-size:14px;cursor:pointer}
+.foot{text-align:center;color:#bbb;font-size:11px;padding:18px}
+</style></head><body><div class=wrap>
+<div class="gbar"><span class="glbl">Sổ nhóm:</span><a class="gt" href="/soketoan/">Ốc Korea</a><a class="gt on" href="/soketoan/rau/">Rau Korea</a></div>
+<div class=tabs></div>
+<section class="pg on" style="padding:30px 18px;text-align:center"><h1>Sổ công nợ — Rau Korea</h1><p class="sub" style="font-size:14px">Nhóm <b>Rau Korea</b> chưa có dữ liệu. Sổ sẽ hiện ở đây sau khi bắt đầu theo dõi nhóm này.</p></section>
+<div class=foot>Sổ công nợ nhóm Rau Korea</div>
+</div>
+<div id=lb onclick="this.classList.remove('on')"><span class=x>×</span><img id=lbi></div>
+<div id=evp onclick="this.classList.remove('on')"><div class=evbox onclick="event.stopPropagation()"><div id=evt></div><button class=eb onclick="document.getElementById('evp').classList.remove('on')">Đóng</button></div></div>
+<script>
+function go(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+ var el=document.getElementById(id);if(el)el.classList.add('on');
+ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+ var i=[...document.querySelectorAll('.tab')].find(t=>t.getAttribute('onclick').includes("'"+id+"'"));if(i)i.classList.add('on');
+ window.scrollTo(0,0);}
+function zoomu(img){document.getElementById('lbi').src=img.src;document.getElementById('lb').classList.add('on');}
+function mfilter(btn,m){var s=btn.closest('section');
+ s.querySelectorAll('.mf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+ s.querySelectorAll('.blk').forEach(e=>{if(!e.dataset.m)return;e.style.display=(m==='all'||e.dataset.m===m)?'':'none';});}
+function dcfilter(btn,m){var b=btn.closest('.dcbox');
+ b.querySelectorAll('.mf').forEach(x=>x.classList.remove('on'));btn.classList.add('on');
+ b.querySelectorAll('.dcr').forEach(function(r){r.style.display=(m!=='all'&&r.dataset.m===m)?'':'none';});
+ var t=b.querySelector('.dctot');if(t)t.style.display=(m==='all')?'':'none';}
+function ev(tr){var d=tr.dataset.ev||'';var ngay=tr.cells[0].textContent.trim(),ten=tr.cells[1].textContent.trim();
+ var b=document.getElementById('evt');b.innerHTML='';
+ var h=document.createElement('div');h.style.cssText='font-weight:600;font-size:15px';h.textContent=ten+(ngay?'  ·  '+ngay:'');
+ var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
+ var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
+ b.appendChild(h);b.appendChild(l);b.appendChild(p);
+ var im=tr.querySelector('img.thumb');
+ if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
+ if(im){var lb=document.createElement('div');lb.style.cssText='color:#999;font-size:12px;margin:12px 0 4px';lb.textContent='Ảnh bằng chứng:';
+  var i2=document.createElement('img');i2.src=im.src;i2.style.cssText='display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;cursor:pointer';i2.title='Bấm để đóng';i2.onclick=function(e){document.getElementById('evp').classList.remove('on');};
+  b.appendChild(lb);b.appendChild(i2);}
+ document.getElementById('evp').classList.add('on');}
+function _defm(g,fn){var bs=g.querySelectorAll('.mf');
+ if(bs.length>=2){fn(bs[1],bs[1].textContent.trim());}      /* nut THANG MOI NHAT (ngay sau 'Tất cả') = thang hien tai */
+ else if(bs.length){fn(bs[0],'all');}}
+document.querySelectorAll('.dcbox').forEach(function(b){_defm(b,dcfilter);});
+document.querySelectorAll('section .mfilter').forEach(function(mf){if(!mf.closest('.dcbox'))_defm(mf,mfilter);});
+</script></body></html>
