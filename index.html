@@ -22,6 +22,7 @@ h1{font-size:19px;margin:4px 0 2px;color:#1F6E43}.sub{margin:0 0 12px;color:#555
 table{width:100%;border-collapse:collapse;font-size:14px}
 th,td{padding:7px 10px;border:1px solid #cfcfcf;text-align:left}
 .det tr.it{cursor:pointer}.det tr.it:active td,.det tr.it:hover td{background:#eef6ea}
+.det tr.it td:first-child{color:#1155CC;font-weight:700}
 th{background:#ebeeea;font-size:11px;color:#3a3a3a;font-weight:700}
 .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#111}
 .cur{color:#5a5a5a;font-size:12px;text-align:center;width:42px}
@@ -80,6 +81,11 @@ function ev(tr){var d=tr.dataset.ev||'';var tm=tr.dataset.tim||'';var ngay=tr.ce
  var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
  var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
  b.appendChild(h);b.appendChild(l);b.appendChild(p);
+ var im=tr.querySelector('img.thumb');
+ if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
+ if(im){var lb=document.createElement('div');lb.style.cssText='color:#999;font-size:12px;margin:12px 0 4px';lb.textContent='Ảnh bằng chứng:';
+  var i2=document.createElement('img');i2.src=im.src;i2.style.cssText='display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;cursor:zoom-in';i2.onclick=function(e){e.stopPropagation();zoomu(i2);};
+  b.appendChild(lb);b.appendChild(i2);}
  if(tm){var btn=document.createElement('button');btn.textContent='📋 Copy để tìm trong Zalo';
   btn.style.cssText='margin-top:12px;background:#1F6E43;color:#fff;border:0;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:600;cursor:pointer';
   btn.onclick=function(e){e.stopPropagation();var done=function(){btn.textContent='✓ Đã copy — dán vào ô Tìm kiếm Zalo';};
