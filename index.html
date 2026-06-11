@@ -28,7 +28,6 @@ th{background:#ebeeea;font-size:11px;color:#3a3a3a;font-weight:700}
 .cur{color:#5a5a5a;font-size:12px;text-align:center;width:42px}
 .tot td{font-weight:700;background:#edf0ec}
 .card.red .tot td{color:#C00000}.card.grn .tot td{color:#1F6E43}.card.blu .tot td{color:#1F4E78}
-.dcbox .dcr{display:none}
 .dcsub td{font-weight:700;background:#eaf0f6;color:#1F4E78;border-top:2px solid #b9c9dc}
 .dchead td{font-weight:700;background:#1F4E78;color:#fff;font-size:12px;letter-spacing:.3px}
 a{color:#1155CC;text-decoration:none;font-weight:600}
@@ -75,9 +74,8 @@ function mfilter(btn,m){var s=btn.closest('section');
  s.querySelectorAll('.blk').forEach(e=>{if(!e.dataset.m)return;e.style.display=(m==='all'||e.dataset.m===m)?'':'none';});}
 function dcfilter(btn,m){var b=btn.closest('.dcbox');
  b.querySelectorAll('.mf').forEach(x=>x.classList.remove('on'));btn.classList.add('on');
- // 'Tất cả' -> CHI hien TONG TAT CA (an chi tiet thang); bam 1 thang -> hien chi tiet thang do
- b.querySelectorAll('.dcr').forEach(r=>{r.style.display=(m!=='all'&&r.dataset.m===m)?'table-row':'none';});
- var t=b.querySelector('.dctot');if(t)t.style.display=(m==='all')?'table-row':'none';}
+ b.querySelectorAll('.dcr').forEach(function(r){r.style.display=(m!=='all'&&r.dataset.m===m)?'':'none';});
+ var t=b.querySelector('.dctot');if(t)t.style.display=(m==='all')?'':'none';}
 function ev(tr){var d=tr.dataset.ev||'';var ngay=tr.cells[0].textContent.trim(),ten=tr.cells[1].textContent.trim();
  var b=document.getElementById('evt');b.innerHTML='';
  var h=document.createElement('div');h.style.cssText='font-weight:600;font-size:15px';h.textContent=ten+(ngay?'  ·  '+ngay:'');
@@ -90,4 +88,5 @@ function ev(tr){var d=tr.dataset.ev||'';var ngay=tr.cells[0].textContent.trim(),
   var i2=document.createElement('img');i2.src=im.src;i2.style.cssText='display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;cursor:pointer';i2.title='Bấm để đóng';i2.onclick=function(e){document.getElementById('evp').classList.remove('on');};
   b.appendChild(lb);b.appendChild(i2);}
  document.getElementById('evp').classList.add('on');}
+document.querySelectorAll('.dcbox').forEach(function(b){var a=b.querySelector('.mf');if(a)dcfilter(a,'all');});
 </script></body></html>
