@@ -64,6 +64,12 @@ figcaption{font-size:10px;color:#999;margin-top:2px;line-height:1.2}
 .evbox{background:#fff;border-radius:12px;padding:18px 20px;max-width:430px;width:100%;line-height:1.5}
 .evbox .eb{margin-top:14px;padding:8px 18px;border:none;border-radius:8px;background:#1F6E43;color:#fff;font-size:14px;cursor:pointer}
 .foot{text-align:center;color:#bbb;font-size:11px;padding:18px}
+#editbar{position:fixed;left:0;right:0;bottom:0;background:#1F6E43;color:#fff;padding:8px 14px;
+  display:flex;align-items:center;gap:10px;z-index:40;box-shadow:0 -2px 8px rgba(0,0,0,.2);font-size:14px}
+#editbar button{font-size:14px;padding:6px 14px;border:none;border-radius:8px;cursor:pointer;background:#fff;color:#1F6E43;font-weight:700}
+#editbar #emsg{font-size:12px;opacity:.9}
+body.editing td.num{background:#fff7d6;outline:1px dashed #d4a017}
+body.editing td.num:focus{background:#fff;outline:2px solid #1F6E43}
 </style></head><body><div class=wrap>
 <div class="gbar"><span class="glbl">Sổ nhóm:</span><a class="gt" href="/soketoan/">Ốc Korea</a><a class="gt on" href="/soketoan/rau/">Rau Korea</a></div>
 <div class=tabs></div>
@@ -103,4 +109,6 @@ function _defm(g,fn){var bs=g.querySelectorAll('.mf');
  else if(bs.length){fn(bs[0],'all');}}
 document.querySelectorAll('.dcbox').forEach(function(b){_defm(b,dcfilter);});
 document.querySelectorAll('section .mfilter').forEach(function(mf){if(!mf.closest('.dcbox'))_defm(mf,mfilter);});
-</script></body></html>
+</script>
+
+</body></html>
