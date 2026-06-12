@@ -45,21 +45,20 @@ a{color:#1155CC;text-decoration:none;font-weight:600}
 .blk.ok .bh{background:#1F6E43;color:#fff}.blk.no .bh{background:#C00000;color:#fff}
 .blk.self .bh{background:#1F4E78;color:#fff}.blk.thu .bh{background:#DB2777;color:#fff}
 .bh .cgflag{color:#FFD56B}
-.pendrow{background:#fbf3df}                       /* món ảnh viết tay cần soát: nền vàng nhạt + ⚠ */
-.pendrow td{border-top:1px solid #ecdcae}
-.pwarn{color:#B26A00;font-weight:700}
-.pnote{display:none;font-size:11px;color:#8a5a00;margin-top:3px;font-style:italic;line-height:1.45}
+.pendrow{background:#ececec}                       /* món ảnh viết tay cần soát: nền XÁM + ⚠ */
+.pendrow td{border-top:1px solid #dadada}
+.pwarn{color:#777;font-weight:700}
+.pnote{display:none;font-size:11px;color:#666;margin-top:3px;font-style:italic;line-height:1.45}
 .pacts{display:none;margin-top:6px}
 body.editing .pnote,body.editing .pacts{display:block}
-body.editing .pendrow .pnm{outline:1px dashed #c9a23a;padding:0 3px;border-radius:3px}
+body.editing .pendrow .pnm{outline:1px dashed #aaa;padding:0 3px;border-radius:3px}
 .papp{margin-right:8px;font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#1F6E43;color:#fff;cursor:pointer}
 .pdel{font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#C00000;color:#fff;cursor:pointer}
-.pendrow.appd{background:#d8f0d8}
+.pendrow.appd{background:#fff}                      /* đã kiểm / sửa xong -> VỀ TRẮNG (bình thường) */
 .pendrow.appd .papp{background:#0a7d2c}
 .pendrow.del{background:#f3d2d2;opacity:.65}
 .pendrow.del .pnm{text-decoration:line-through}
-.trunganh{background:#fffbe6}                      /* món CHAT trùng ảnh viết tay: vàng nhạt (bằng chứng = tin nhắn) */
-.tanote{font-size:11px;color:#B26A00;font-weight:600}
+.trunganh{background:#ededed}                       /* món CHAT trùng ảnh viết tay: XÁM nhạt (bằng chứng = tin nhắn) */
 .nogia{color:#999;font-style:italic;font-weight:400}
 .cgflag{color:#B26A00;font-weight:700;font-size:12px}
 table.det td{font-size:13px}.det .qn{text-align:right;color:#1F4E78;font-style:italic}
@@ -114,7 +113,7 @@ function ev(tr){var d=tr.dataset.ev||'';var ngay=tr.cells[0].textContent.trim(),
  var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
  var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
  b.appendChild(h);b.appendChild(l);b.appendChild(p);
- var im=tr.querySelector('img.thumb');
+ var im=tr.querySelector('img.evthumb')||tr.querySelector('img.thumb');   // evthumb = anh chup TIN NHAN (mon trung anh viet tay)
  if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
  if(im){var lb=document.createElement('div');lb.style.cssText='color:#999;font-size:12px;margin:12px 0 4px';lb.textContent='Ảnh bằng chứng:';
   var i2=document.createElement('img');i2.src=im.src;i2.style.cssText='display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;cursor:pointer';i2.title='Bấm để đóng';i2.onclick=function(e){document.getElementById('evp').classList.remove('on');};
