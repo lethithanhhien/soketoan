@@ -107,7 +107,10 @@ function dcfilter(btn,m){var b=btn.closest('.dcbox');
  b.querySelectorAll('.mf').forEach(x=>x.classList.remove('on'));btn.classList.add('on');
  b.querySelectorAll('.dcr').forEach(function(r){r.style.display=(m!=='all'&&r.dataset.m===m)?'':'none';});
  var t=b.querySelector('.dctot');if(t)t.style.display=(m==='all')?'':'none';}
-function ev(tr){var d=tr.dataset.ev||'';var ngay=tr.cells[0].textContent.trim(),ten=tr.cells[1].textContent.trim();
+function ev(tr){if(document.body.classList.contains('editing')){return;}   /* dang sua -> bam o de sua, KHONG popup */
+ if(!(tr.dataset.ev||'').trim()){return;}                                    /* khong co bang chung -> bo qua */
+ var d=tr.dataset.ev||'';var ngay=tr.cells[0].textContent.trim();
+ var nm=tr.querySelector('.pnm');var ten=nm?nm.textContent.trim():tr.cells[1].textContent.trim();
  var b=document.getElementById('evt');b.innerHTML='';
  var h=document.createElement('div');h.style.cssText='font-weight:600;font-size:15px';h.textContent=ten+(ngay?'  ·  '+ngay:'');
  var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
