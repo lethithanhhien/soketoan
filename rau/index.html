@@ -45,20 +45,25 @@ a{color:#1155CC;text-decoration:none;font-weight:600}
 .blk.ok .bh{background:#1F6E43;color:#fff}.blk.no .bh{background:#C00000;color:#fff}
 .blk.self .bh{background:#1F4E78;color:#fff}.blk.thu .bh{background:#DB2777;color:#fff}
 .bh .cgflag{color:#FFD56B}
-.pendrow{background:#ececec}                       /* món ảnh viết tay cần soát: nền XÁM + ⚠ */
-.pendrow td{border-top:1px solid #dadada}
-.pwarn{color:#777;font-weight:700}
+/* RIENG TU: nen xam + ⚠ + ghi chu CHI hien khi vao SUA (mat khau). NGUOI XEM (sep) thay dong TRANG binh thuong. */
+.pendrow{background:transparent}                   /* công khai: như dòng thường (sạch) */
+.pendrow td{border-top:1px solid #eee}
+body.editing .pendrow{background:#ececec}          /* sửa: nền XÁM = cần soát */
+body.editing .pendrow td{border-top-color:#dadada}
+.pwarn{display:none;color:#777;font-weight:700}    /* ⚠ ẩn với người xem */
+body.editing .pwarn{display:inline}
 .pnote{display:none;font-size:11px;color:#666;margin-top:3px;font-style:italic;line-height:1.45}
 .pacts{display:none;margin-top:6px}
 body.editing .pnote,body.editing .pacts{display:block}
 body.editing .pendrow .pnm{outline:1px dashed #aaa;padding:0 3px;border-radius:3px}
 .papp{margin-right:8px;font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#1F6E43;color:#fff;cursor:pointer}
 .pdel{font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#C00000;color:#fff;cursor:pointer}
-.pendrow.appd{background:#fff}                      /* đã kiểm / sửa xong -> VỀ TRẮNG (bình thường) */
-.pendrow.appd .papp{background:#0a7d2c}
-.pendrow.del{background:#f3d2d2;opacity:.65}
-.pendrow.del .pnm{text-decoration:line-through}
-.trunganh{background:#ededed}                       /* món CHAT trùng ảnh viết tay: XÁM nhạt (bằng chứng = tin nhắn) */
+body.editing .pendrow.appd{background:#fff}         /* đã kiểm/sửa xong -> trắng */
+body.editing .pendrow.appd .papp{background:#0a7d2c}
+body.editing .pendrow.del{background:#f3d2d2;opacity:.65}
+body.editing .pendrow.del .pnm{text-decoration:line-through}
+.trunganh{background:transparent}                  /* công khai: như dòng thường */
+body.editing .trunganh{background:#ededed}          /* sửa: xám nhạt = trùng ảnh viết tay */
 .nogia{color:#999;font-style:italic;font-weight:400}
 .cgflag{color:#B26A00;font-weight:700;font-size:12px}
 table.det td{font-size:13px}.det .qn{text-align:right;color:#1F4E78;font-style:italic}
