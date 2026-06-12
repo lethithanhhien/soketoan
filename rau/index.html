@@ -45,6 +45,14 @@ a{color:#1155CC;text-decoration:none;font-weight:600}
 .blk.ok .bh{background:#1F6E43;color:#fff}.blk.no .bh{background:#C00000;color:#fff}
 .blk.self .bh{background:#1F4E78;color:#fff}.blk.thu .bh{background:#DB2777;color:#fff}
 .bh .cgflag{color:#FFD56B}
+.blk.pend{border:1px dashed #9a9a9a;background:#f5f5f5}
+.blk.pend .bh{background:#8a8a8a;color:#fff;font-weight:700}
+.pnote{display:none;font-size:12px;color:#B26A00}
+body.editing .pnote{display:inline}
+.papp{display:none;margin-left:6px;font-size:12px;padding:3px 9px;border:0;border-radius:6px;background:#1F6E43;color:#fff;cursor:pointer}
+body.editing .papp{display:inline-block}
+.pendrow.appd{background:#d8f0d8}
+.pendrow.appd .papp{background:#0a7d2c}
 .nogia{color:#999;font-style:italic;font-weight:400}
 .cgflag{color:#B26A00;font-weight:700;font-size:12px}
 table.det td{font-size:13px}.det .qn{text-align:right;color:#1F4E78;font-style:italic}
@@ -64,10 +72,11 @@ figcaption{font-size:10px;color:#999;margin-top:2px;line-height:1.2}
 .evbox{background:#fff;border-radius:12px;padding:18px 20px;max-width:430px;width:100%;line-height:1.5}
 .evbox .eb{margin-top:14px;padding:8px 18px;border:none;border-radius:8px;background:#1F6E43;color:#fff;font-size:14px;cursor:pointer}
 .foot{text-align:center;color:#bbb;font-size:11px;padding:18px}
-#editbar{position:fixed;left:0;right:0;bottom:0;background:#1F6E43;color:#fff;padding:8px 14px;
-  display:flex;align-items:center;gap:10px;z-index:40;box-shadow:0 -2px 8px rgba(0,0,0,.2);font-size:14px}
-#editbar button{font-size:14px;padding:6px 14px;border:none;border-radius:8px;cursor:pointer;background:#fff;color:#1F6E43;font-weight:700}
-#editbar #emsg{font-size:12px;opacity:.9}
+#editbar{margin-left:auto;display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+#editbar button{font-size:13px;padding:6px 13px;border:none;border-radius:999px;cursor:pointer;background:#1F6E43;color:#fff;font-weight:700}
+#editbar #esave button{margin-left:4px}
+#editbar .ecancel{background:#eee!important;color:#333!important}
+#editbar #emsg{font-size:11px;color:#666;width:100%;text-align:right}
 body.editing td.num{background:#fff7d6;outline:1px dashed #d4a017}
 body.editing td.num:focus{background:#fff;outline:2px solid #1F6E43}
 </style></head><body><div class=wrap>
