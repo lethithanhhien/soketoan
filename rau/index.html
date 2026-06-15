@@ -50,7 +50,9 @@ a{color:#1155CC;text-decoration:none;font-weight:600}
 .itsg{background:#ececec}                            /* dòng chat cần soát giá = nền XÁM (ai cũng thấy) */
 .pendrow td{border-top:1px solid #dadada}
 .pwarn{color:#777;font-weight:700}                 /* ⚠ ai cũng thấy */
-.tinflag{color:#B26A00;font-weight:700;cursor:help;font-size:12px}   /* ⚠ dòng bằng chứng là TIN NHẮN -> bấm xem + copy tìm Zalo */
+.tinw{color:#c87f00;font-weight:700;cursor:help}   /* ⚠ bang chung la TIN NHAN -> bam de copy doi chieu Zalo */
+.copytin{margin-top:8px;padding:7px 12px;border:1px solid #19a35a;background:#eafff2;color:#0b6b38;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600}
+.copytin:hover{background:#d6f7e4}
 .pnote{display:none;font-size:11px;color:#666;margin-top:3px;font-style:italic;line-height:1.45}
 .pacts{display:none;margin-top:6px}
 body.editing .pnote,body.editing .pacts{display:block}   /* ghi chú + nút duyệt: chỉ khi SỬA (mật khẩu) */
@@ -111,24 +113,27 @@ function dcfilter(btn,m){var b=btn.closest('.dcbox');
  b.querySelectorAll('.dcr').forEach(function(r){r.style.display=(m!=='all'&&r.dataset.m===m)?'':'none';});
  var t=b.querySelector('.dctot');if(t)t.style.display=(m==='all')?'':'none';}
 function ev(tr){if(document.body.classList.contains('editing')){return;}   /* dang sua -> bam o de sua, KHONG popup */
- if(!(tr.dataset.ev||'').trim()){return;}                                    /* khong co bang chung -> bo qua */
- var d=tr.dataset.ev||'';var ngay=tr.cells[0].textContent.trim();
- var nm=tr.querySelector('.pnm');var ten=nm?nm.textContent.trim():tr.cells[1].textContent.trim();
+ var d=(tr.dataset.ev||'');var tim=(tr.dataset.tim||'');
+ if(!d.trim()&&!tim.trim()){return;}                                        /* khong co bang chung -> bo qua */
+ var ngay=tr.cells[0].textContent.trim();
+ var nm=tr.querySelector('.pnm');var ten=(nm?nm.textContent:tr.cells[1].textContent).replace('⚠','').trim();
  var b=document.getElementById('evt');b.innerHTML='';
  var h=document.createElement('div');h.style.cssText='font-weight:600;font-size:15px';h.textContent=ten+(ngay?'  ·  '+ngay:'');
- var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
- var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
- b.appendChild(h);b.appendChild(l);b.appendChild(p);
- var tim=(tr.dataset.tim||'').trim();
- if(tim){
-  var tl=document.createElement('div');tl.style.cssText='color:#999;font-size:12px;margin:12px 0 3px';tl.textContent='Tin nhắn gốc (copy rồi dán vào ô tìm kiếm Zalo để tìm nhanh):';
-  var tb=document.createElement('div');tb.style.cssText='color:#222;background:#f3f3f0;border-radius:6px;padding:8px 10px;font-size:13px;white-space:pre-wrap;user-select:all';tb.textContent=tim;
-  var cb=document.createElement('button');cb.textContent='📋 Copy tin để tìm trên Zalo';cb.style.cssText='margin-top:8px;padding:7px 14px;border:none;border-radius:8px;background:#1F6E43;color:#fff;font-size:13px;cursor:pointer';
-  cb.onclick=function(e){e.stopPropagation();
-   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(tim).then(function(){cb.textContent='✓ Đã copy — dán vào tìm kiếm Zalo';},function(){cb.textContent='Copy lỗi — bôi đen tin ở trên để copy';});}
-   else{var ta=document.createElement('textarea');ta.value=tim;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');cb.textContent='✓ Đã copy';}catch(err){cb.textContent='Copy lỗi — copy tay';}document.body.removeChild(ta);}};
-  b.appendChild(tl);b.appendChild(tb);b.appendChild(cb);
- }
+ b.appendChild(h);
+ if(d.trim()){
+  var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
+  var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
+  b.appendChild(l);b.appendChild(p);}
+ if(tim.trim()){                                                            /* tim = nguyen van tin -> nut COPY + ⚠ doi chieu Zalo */
+  var l2=document.createElement('div');l2.style.cssText='color:#999;font-size:12px;margin:12px 0 3px';l2.textContent='Nội dung tin nhắn (bằng chứng):';
+  var q=document.createElement('div');q.style.cssText='color:#111;background:#f6f6f6;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;white-space:pre-wrap';q.textContent=tim;
+  var cb=document.createElement('button');cb.className='copytin';cb.textContent='📋 Copy tin — dán vào ô tìm kiếm Zalo';
+  cb.onclick=function(e){e.stopPropagation();var t=tim;
+   function ok(){cb.textContent='✓ Đã copy — mở Zalo, dán vào ô tìm kiếm để đối chiếu';}
+   function fb(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(_){}document.body.removeChild(ta);}
+   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb);}else{fb();}};
+  var note=document.createElement('div');note.style.cssText='color:#b26a00;font-size:12px;margin-top:6px';note.textContent='⚠ Bằng chứng là TIN NHẮN — nên đối chiếu lại trên Zalo (dán nội dung vào ô tìm kiếm).';
+  b.appendChild(l2);b.appendChild(q);b.appendChild(cb);b.appendChild(note);}
  var im=tr.querySelector('img.evthumb')||tr.querySelector('img.thumb');   // evthumb = anh chup TIN NHAN (mon trung anh viet tay)
  if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
  if(im){var lb=document.createElement('div');lb.style.cssText='color:#999;font-size:12px;margin:12px 0 4px';lb.textContent='Ảnh bằng chứng:';
