@@ -50,6 +50,7 @@ a{color:#1155CC;text-decoration:none;font-weight:600}
 .itsg{background:#ececec}                            /* dòng chat cần soát giá = nền XÁM (ai cũng thấy) */
 .pendrow td{border-top:1px solid #dadada}
 .pwarn{color:#777;font-weight:700}                 /* ⚠ ai cũng thấy */
+.tinflag{color:#B26A00;font-weight:700;cursor:help;font-size:12px}   /* ⚠ dòng bằng chứng là TIN NHẮN -> bấm xem + copy tìm Zalo */
 .pnote{display:none;font-size:11px;color:#666;margin-top:3px;font-style:italic;line-height:1.45}
 .pacts{display:none;margin-top:6px}
 body.editing .pnote,body.editing .pacts{display:block}   /* ghi chú + nút duyệt: chỉ khi SỬA (mật khẩu) */
@@ -118,6 +119,16 @@ function ev(tr){if(document.body.classList.contains('editing')){return;}   /* da
  var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
  var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
  b.appendChild(h);b.appendChild(l);b.appendChild(p);
+ var tim=(tr.dataset.tim||'').trim();
+ if(tim){
+  var tl=document.createElement('div');tl.style.cssText='color:#999;font-size:12px;margin:12px 0 3px';tl.textContent='Tin nhắn gốc (copy rồi dán vào ô tìm kiếm Zalo để tìm nhanh):';
+  var tb=document.createElement('div');tb.style.cssText='color:#222;background:#f3f3f0;border-radius:6px;padding:8px 10px;font-size:13px;white-space:pre-wrap;user-select:all';tb.textContent=tim;
+  var cb=document.createElement('button');cb.textContent='📋 Copy tin để tìm trên Zalo';cb.style.cssText='margin-top:8px;padding:7px 14px;border:none;border-radius:8px;background:#1F6E43;color:#fff;font-size:13px;cursor:pointer';
+  cb.onclick=function(e){e.stopPropagation();
+   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(tim).then(function(){cb.textContent='✓ Đã copy — dán vào tìm kiếm Zalo';},function(){cb.textContent='Copy lỗi — bôi đen tin ở trên để copy';});}
+   else{var ta=document.createElement('textarea');ta.value=tim;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');cb.textContent='✓ Đã copy';}catch(err){cb.textContent='Copy lỗi — copy tay';}document.body.removeChild(ta);}};
+  b.appendChild(tl);b.appendChild(tb);b.appendChild(cb);
+ }
  var im=tr.querySelector('img.evthumb')||tr.querySelector('img.thumb');   // evthumb = anh chup TIN NHAN (mon trung anh viet tay)
  if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
  if(im){var lb=document.createElement('div');lb.style.cssText='color:#999;font-size:12px;margin:12px 0 4px';lb.textContent='Ảnh bằng chứng:';
