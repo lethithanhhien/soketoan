@@ -45,6 +45,10 @@ a{color:#1155CC;text-decoration:none;font-weight:600}
 .blk.ok .bh{background:#1F6E43;color:#fff}.blk.no .bh{background:#C00000;color:#fff}
 .blk.self .bh{background:#1F4E78;color:#fff}.blk.thu .bh{background:#DB2777;color:#fff}
 .bh .cgflag{color:#FFD56B}
+.paidbtn{display:none;margin-left:8px;font-size:11px;padding:3px 9px;border:0;border-radius:6px;background:#0a7d2c;color:#fff;cursor:pointer;font-weight:700;vertical-align:middle}
+.paidbtn.undo{background:#8a5a00}
+.paidbtn:disabled{opacity:.7;cursor:default}
+body.editing .paidbtn{display:inline-block}     /* nut "Đã thanh toán"/"Bỏ đánh dấu" CHI hien khi SUA (mat khau) */
 /* Nền XÁM + ⚠ HIỆN cho mọi người (sếp xem được). Chỉ GHI CHÚ chi tiết + nút duyệt là riêng tư (vào Sửa mới hiện). */
 .pendrow{background:#ececec}                        /* nền XÁM = cần soát (ai cũng thấy) */
 .pendrow.tinrow{background:#fff}                     /* dòng "đã trả" bằng chứng-tin: nền TRẮNG (chỉ đối chiếu, ko phải nghi sai) */
