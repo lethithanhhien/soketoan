@@ -67,5 +67,15 @@
     "tien": 225000,
     "ten": "사업",
     "sl": ""
+  },
+  "paid:Hà Anh|Tháng 6|đ|15536000": {
+    "q": "paid",
+    "ghi_chu": "Hà Anh đã xác nhận với kế toán",
+    "ngay": "19/06/2026"
+  },
+  "paid:Hà Anh|Tháng 6|won|100000": {
+    "q": "paid",
+    "ghi_chu": "Hà Anh đã xác nhận với kế toán",
+    "ngay": "19/06/2026"
   }
 }
