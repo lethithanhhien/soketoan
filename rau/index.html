@@ -97,118 +97,63 @@ body.editing td.num{background:#fff7d6;outline:1px dashed #d4a017}
 body.editing td.num:focus{background:#fff;outline:2px solid #1F6E43}
 </style><style>.giaobox{background:#eef4fb;border:1px solid #d3e2f2;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:13px;color:#1F4E78;line-height:1.5}.evhint{font-size:11px;color:#888;font-style:italic;margin:6px 2px}.ctvlink{color:#1155CC;font-weight:700;cursor:pointer}.card .it{cursor:pointer}.card .it:hover td{background:#eef6ea}.detw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:6px}.det{width:100%;table-layout:fixed;border-collapse:collapse}.det th,.det td{padding:6px 8px;vertical-align:top;word-wrap:break-word}.det .c-sl{width:58px}.det .c-tt{width:84px}.det .c-tg{width:78px}.det .c-st{width:96px}.det .c-ma{width:92px}.det .c-an{width:62px}.det td.num,.det td.tongma{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.det td.macol{font-weight:700;color:#1F6E43;word-break:break-word;line-height:1.3}.det td.tongma{font-weight:700;color:#111}.det td.slcol{white-space:nowrap;color:#333}.det td.spcol{color:#111}.det td.ttcol{font-size:12px;line-height:1.35}.ngayma{font-size:10px;color:#8a8f98;font-weight:400;margin-top:2px}.tt-no{color:#C00000;font-weight:700}.tt-ok{color:#1F6E43;font-weight:700}.tt-duyet{color:#B26A00;font-weight:700;font-size:11px}.det tr.duyetrow td{background:#fff7e6;color:#B26A00;font-size:12px;padding:5px 10px}.det tr.giaorow td{background:#eef4fb;color:#1F4E78;font-size:12px;padding:5px 10px}.det tr.curow td{background:#fbeaea;color:#C00000;font-weight:700}.det tr.tongall td{background:#fde7e7;color:#C00000;font-weight:800;font-size:15px}.det td.imgc{padding:3px;text-align:center;vertical-align:middle}.det td.imgc img.thumb{width:52px;height:52px;display:block;margin:3px auto;border-radius:5px;border:1px solid #cdd7e0;cursor:zoom-in;object-fit:cover}.card.warn{border:2px solid #E69500;background:#fff7e6}.card.warn .ct{color:#B26A00}.warnul{margin:6px 0 2px 0;padding-left:20px;color:#8a5200;font-size:13px;line-height:1.6}@media(max-width:560px){.det{font-size:12px}.det th,.det td{padding:4px 5px}.det .c-sl{width:46px}.det .c-tt{width:66px}.det .c-tg{width:60px}.det .c-st{width:72px}.det .c-ma{width:60px}.det .c-an{width:46px}.det td.imgc img.thumb{width:42px;height:42px}.ngayma{font-size:9px}}</style><script>(function(){function inf(){var a=document.querySelector('section.pg.on');return {ng:(a&&a.dataset.nguon)||'Kakao / Messenger FB',nh:(a&&a.dataset.nhom)||''};}new MutationObserver(function(){var cb=document.querySelector('#evt .copytin');if(cb&&!cb.dataset.fx){cb.dataset.fx='1';var f=inf();var lbl=f.nh?('nhóm \u201C'+f.nh+'\u201D trên '+f.ng):f.ng;cb.textContent='\uD83D\uDCCB Copy tin — tìm '+lbl;var nt=cb.nextElementSibling;if(nt)nt.textContent='\u26A0 Mở '+f.ng+', vào '+(f.nh?('nhóm \u201C'+f.nh+'\u201D'):'nhóm')+' dán nội dung vào ô tìm kiếm để tìm tin gốc.';var orig=cb.onclick;cb.onclick=function(e){if(orig)orig.call(cb,e);setTimeout(function(){cb.textContent='\u2713 Đã copy — mở '+f.ng+' tìm '+lbl+', dán vào ô tìm kiếm';},0);};}}).observe(document.documentElement,{childList:true,subtree:true});})();</script></head><body><div class=wrap>
 
-<div class=tabs><button class="tab on" onclick="go('__dash')">Tổng quan</button><button class="tab" onclick="go('p0')">비엣트 🇻🇳🇰🇷</button><button class="tab" onclick="go('p1')">thanh</button><button class="tab" onclick="go('p2')">Thuy tran</button><button class="tab" onclick="go('p3')">Dung</button><button class="tab" onclick="go('p4')">Ngọc Diệp</button><button class="tab" onclick="go('p5')">Ngọc Trân</button><button class="tab" onclick="go('p6')">Phương Anh</button><button class="tab" onclick="go('p7')">SI LE HANG CTY</button><button class="tab" onclick="go('p8')">은하</button><button class="tab" onclick="go('p9')">Su su</button><button class="tab" onclick="go('p10')">Trần Gia Hân 2</button><button class="tab" onclick="go('p11')">Rau Việt Nam</button><button class="tab" onclick="go('p12')">Hàng nhà Tina</button></div>
-<section id="__dash" class="pg on"><h1>Sổ công nợ — Rau (Kakao + Facebook)</h1><p class=sub>Cập nhật 2026-06-22 · CTV lấy hàng → còn nợ chị Hiền</p><div class="card red"><div class=ct>CỘNG TÁC VIÊN CÒN NỢ CHỊ HIỀN</div><table><tr><th>Cộng tác viên</th><th>Nhóm</th><th>Tình trạng</th><th class=num>Còn nợ (won)</th></tr><tr class=it onclick="go('p0')"><td><a class=ctvlink>비엣트 🇻🇳🇰🇷 ›</a></td><td>Nhom rau vn</td><td>1 đơn chưa trả</td><td class=num>49.000</td></tr><tr class=it onclick="go('p1')"><td><a class=ctvlink>thanh ›</a></td><td>Chot đon e thanh</td><td>1 đơn chưa trả</td><td class=num>80.000</td></tr><tr class=it onclick="go('p2')"><td><a class=ctvlink>Thuy tran ›</a></td><td>Chốt đơn thuy tran</td><td>5 đơn chưa trả</td><td class=num>524.000</td></tr><tr class=it onclick="go('p3')"><td><a class=ctvlink>Dung ›</a></td><td>DUNG CHOT DON (21/6)</td><td>2 đơn chưa trả</td><td class=num>0</td></tr><tr class=it onclick="go('p4')"><td><a class=ctvlink>Ngọc Diệp ›</a></td><td>nhóm diep</td><td>2 đơn chưa trả</td><td class=num>39.000</td></tr><tr class=it onclick="go('p5')"><td><a class=ctvlink>Ngọc Trân ›</a></td><td>Nhom trân ctv</td><td>2 đơn chưa trả</td><td class=num>47.100</td></tr><tr class=it onclick="go('p6')"><td><a class=ctvlink>Phương Anh ›</a></td><td>Đơn hàng 5206</td><td>1 đơn chưa trả</td><td class=num>0</td></tr><tr class=it onclick="go('p7')"><td><a class=ctvlink>SI LE HANG CTY ›</a></td><td>Đơn hàng 5206</td><td>1 đơn chưa trả</td><td class=num>0</td></tr><tr class=it onclick="go('p8')"><td><a class=ctvlink>은하 ›</a></td><td>🍎🍎 Gửi Đơn Hoa quả</td><td>1 đơn chưa trả</td><td class=num>22.000</td></tr><tr class=it onclick="go('p9')"><td><a class=ctvlink>Su su ›</a></td><td>🍎🍎 Gửi Đơn Hoa quả</td><td>1 đơn chưa trả</td><td class=num>12.000</td></tr><tr class=it onclick="go('p10')"><td><a class=ctvlink>Trần Gia Hân 2 ›</a></td><td>hân</td><td>1 đơn chưa trả</td><td class=num>0</td></tr><tr class=it onclick="go('p11')"><td><a class=ctvlink>Rau Việt Nam ›</a></td><td>Nhom rau vn (FB)</td><td>4 đơn chưa trả</td><td class=num>132.000</td></tr><tr class=it onclick="go('p12')"><td><a class=ctvlink>Hàng nhà Tina ›</a></td><td>Hang nha Tina (FB)</td><td>1 đơn chưa trả</td><td class=num>292.040</td></tr><tr class=tot><td colspan=3>TỔNG CTV CÒN NỢ</td><td class=num>1.197.140</td></tr></table></div><p class=note>Bấm tên cộng tác viên để xem chi tiết từng đơn + ghi chú rõ ràng, chi tiết.</p></section><section id="p0" class="pg" data-nguon="Kakao" data-nhom="Nhom rau vn"><h1>비엣트 🇻🇳🇰🇷</h1><p class=sub>Nhóm: Nhom rau vn · còn nợ <b style="color:#C00000">49.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:24; 비엣트 🇻🇳🇰🇷 · 22/06/2026 10:26; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan
-
-1kg rau má hàn 12
-2 kg lá lót vn 26
-500g chuối bào 6
-
-5k thecbe
-
-Tổng 49k
-
-울산광역시 동구 방어동 1113 정림아파트 상가동 2층2호
-010-4675-2799 MAN QUAN
+<div class=tabs><button class="tab on" onclick="go('__dash')">Tổng quan</button><button class="tab" onclick="go('p0')">비엣트 🇻🇳🇰🇷</button><button class="tab" onclick="go('p1')">thanh</button><button class="tab" onclick="go('p2')">thuy tran</button><button class="tab" onclick="go('p3')">Dung</button><button class="tab" onclick="go('p4')">Ngọc Diệp</button><button class="tab" onclick="go('p5')">Ngọc Trân</button><button class="tab" onclick="go('p6')">은하</button><button class="tab" onclick="go('p7')">Su su</button><button class="tab" onclick="go('p8')">Trần Gia Hân 2</button><button class="tab" onclick="go('p9')">Hàng nhà Tina</button></div>
+<section id="__dash" class="pg on"><h1>Sổ công nợ — Rau (Kakao + Facebook)</h1><p class=sub>Cập nhật 2026-06-22 · CTV lấy hàng → còn nợ chị Hiền</p><div class="card red"><div class=ct>CỘNG TÁC VIÊN CÒN NỢ CHỊ HIỀN</div><table><tr><th>Cộng tác viên</th><th>Nhóm</th><th>Tình trạng</th><th class=num>Còn nợ (won)</th></tr><tr class=it onclick="go('p0')"><td><a class=ctvlink>비엣트 🇻🇳🇰🇷 ›</a></td><td>Nhom rau vn</td><td>1 đơn chưa trả</td><td class=num>49.000</td></tr><tr class=it onclick="go('p1')"><td><a class=ctvlink>thanh ›</a></td><td>Chot đon e thanh</td><td>1 đơn chưa trả</td><td class=num>80.000</td></tr><tr class=it onclick="go('p2')"><td><a class=ctvlink>thuy tran ›</a></td><td>Chốt đơn thuy tran</td><td>5 đơn chưa trả</td><td class=num>524.000</td></tr><tr class=it onclick="go('p3')"><td><a class=ctvlink>Dung ›</a></td><td>DUNG CHOT DON (21/6)</td><td>2 đơn chưa trả</td><td class=num>0</td></tr><tr class=it onclick="go('p4')"><td><a class=ctvlink>Ngọc Diệp ›</a></td><td>nhóm diep</td><td>2 đơn chưa trả</td><td class=num>39.000</td></tr><tr class=it onclick="go('p5')"><td><a class=ctvlink>Ngọc Trân ›</a></td><td>Nhom trân ctv</td><td>3 đơn chưa trả</td><td class=num>47.100</td></tr><tr class=it onclick="go('p6')"><td><a class=ctvlink>은하 ›</a></td><td>🍎🍎 Gửi Đơn Hoa quả</td><td>1 đơn chưa trả</td><td class=num>22.000</td></tr><tr class=it onclick="go('p7')"><td><a class=ctvlink>Su su ›</a></td><td>🍎🍎 Gửi Đơn Hoa quả</td><td>1 đơn chưa trả</td><td class=num>12.000</td></tr><tr class=it onclick="go('p8')"><td><a class=ctvlink>Trần Gia Hân 2 ›</a></td><td>hân</td><td>1 đơn chưa trả</td><td class=num>0</td></tr><tr class=it onclick="go('p9')"><td><a class=ctvlink>Hàng nhà Tina ›</a></td><td>Hang nha Tina (FB)</td><td>1 đơn chưa trả</td><td class=num>467.080</td></tr><tr class=tot><td colspan=3>TỔNG CTV CÒN NỢ</td><td class=num>1.240.180</td></tr></table></div><p class=note>Bấm tên cộng tác viên để xem chi tiết từng đơn + ghi chú rõ ràng, chi tiết.</p></section><section id="p0" class="pg" data-nguon="Kakao" data-nhom="Nhom rau vn"><h1>비엣트 🇻🇳🇰🇷</h1><p class=sub>Nhóm: Nhom rau vn · còn nợ <b style="color:#C00000">49.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan 1kg rau má hàn 12 2 kg lá lót vn 26 500g chuối bào 6 5k thecbe Tổng 49k
 — — —
-Lot la hnay sang moi roi ok nha e oi
+Ok e"><td class=macol>VT4<div class=ngayma>22/06/2026</div></td><td class=spcol>rau má hàn</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan 1kg rau má hàn 12 2 kg lá lót vn 26 500g chuối bào 6 5k thecbe Tổng 49k
 — — —
-Dạ chốt cho em njes
+Ok e"><td class=macol></td><td class=spcol>lá lốt vn</td><td class=slcol>2 kg</td><td class=num>26.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan 1kg rau má hàn 12 2 kg lá lót vn 26 500g chuối bào 6 5k thecbe Tổng 49k
 — — —
-Ok e"><td class=macol>VT4<div class=ngayma>22/06/2026</div></td><td class=spcol>rau má hàn</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:24; 비엣트 🇻🇳🇰🇷 · 22/06/2026 10:26; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan
-
-1kg rau má hàn 12
-2 kg lá lót vn 26
-500g chuối bào 6
-
-5k thecbe
-
-Tổng 49k
-
-울산광역시 동구 방어동 1113 정림아파트 상가동 2층2호
-010-4675-2799 MAN QUAN
+Ok e"><td class=macol></td><td class=spcol>chuối bào</td><td class=slcol>0.5 kg</td><td class=num>6.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan 1kg rau má hàn 12 2 kg lá lót vn 26 500g chuối bào 6 5k thecbe Tổng 49k
 — — —
-Lot la hnay sang moi roi ok nha e oi
-— — —
-Dạ chốt cho em njes
-— — —
-Ok e"><td class=macol></td><td class=spcol>lá lốt vn</td><td class=slcol>2 kg</td><td class=num>26.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:24; 비엣트 🇻🇳🇰🇷 · 22/06/2026 10:26; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan
+Ok e"><td class=macol></td><td class=spcol>thecbe</td><td class=slcol>1 lượt</td><td class=num>5.000</td><td class="num tongma">49.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>49.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p1" class="pg" data-nguon="Kakao" data-nhom="Chot đon e thanh"><h1>thanh</h1><p class=sub>Nhóm: Chot đon e thanh · còn nợ <b style="color:#C00000">80.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="thanh · 22/06/2026 14:26; Thanh Hien 윤정 · 22/06/2026 14:30" data-tim="광주시  광산구  목련로81(월곡동)
+건우축산
+01020861485
 
-1kg rau má hàn 12
-2 kg lá lót vn 26
-500g chuối bào 6
+Hanh tam 2
+Tat 2
+1 la dua
 
-5k thecbe
 
-Tổng 49k
-
-울산광역시 동구 방어동 1113 정림아파트 상가동 2층2호
-010-4675-2799 MAN QUAN
+K1
 — — —
-Lot la hnay sang moi roi ok nha e oi
-— — —
-Dạ chốt cho em njes
-— — —
-Ok e"><td class=macol></td><td class=spcol>chuối bào</td><td class=slcol>0.5 kg</td><td class=num>6.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="비엣트 🇻🇳🇰🇷 · 22/06/2026 10:13; Thanh Hien 윤정 · 22/06/2026 10:24; 비엣트 🇻🇳🇰🇷 · 22/06/2026 10:26; Thanh Hien 윤정 · 22/06/2026 10:26" data-tim="VT4 manquan
+Ok"><td class=macol>K1<div class=ngayma>22/06/2026</div></td><td class=spcol>Hanh tam</td><td class=slcol>2 kg</td><td class=num>26.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="thanh · 22/06/2026 14:26; Thanh Hien 윤정 · 22/06/2026 14:30" data-tim="광주시  광산구  목련로81(월곡동)
+건우축산
+01020861485
 
-1kg rau má hàn 12
-2 kg lá lót vn 26
-500g chuối bào 6
+Hanh tam 2
+Tat 2
+1 la dua
 
-5k thecbe
 
-Tổng 49k
+K1
+— — —
+Ok"><td class=macol></td><td class=spcol>Tat</td><td class=slcol>2 kg</td><td class=num>42.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="thanh · 22/06/2026 14:26; Thanh Hien 윤정 · 22/06/2026 14:30" data-tim="광주시  광산구  목련로81(월곡동)
+건우축산
+01020861485
 
-울산광역시 동구 방어동 1113 정림아파트 상가동 2층2호
-010-4675-2799 MAN QUAN
-— — —
-Lot la hnay sang moi roi ok nha e oi
-— — —
-Dạ chốt cho em njes
-— — —
-Ok e"><td class=macol></td><td class=spcol>thecbe</td><td class=slcol>1 lần</td><td class=num>5.000</td><td class="num tongma">49.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 울산광역시 동구 방어동 1113 정림아파트 상가동 2층2호</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>49.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p1" class="pg" data-nguon="Kakao" data-nhom="Chot đon e thanh"><h1>thanh</h1><p class=sub>Nhóm: Chot đon e thanh · còn nợ <b style="color:#C00000">80.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="thanh · 22/06/2026 14:26; Thanh Hien 윤정 · 22/06/2026 14:30" data-tim="광주시  광산구  목련로81(월곡동) 건우축산 01020861485 Hanh tam 2 Tat 2 1 la dua K1
-— — —
-Ok"><td class=macol>K1<div class=ngayma>22/06/2026</div></td><td class=spcol>Hành tăm</td><td class=slcol>2 kg</td><td class=num>26.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="thanh · 22/06/2026 14:26; Thanh Hien 윤정 · 22/06/2026 14:30" data-tim="광주시  광산구  목련로81(월곡동) 건우축산 01020861485 Hanh tam 2 Tat 2 1 la dua K1
-— — —
-Ok"><td class=macol></td><td class=spcol>Tắc</td><td class=slcol>2 kg</td><td class=num>42.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="thanh · 22/06/2026 14:26; Thanh Hien 윤정 · 22/06/2026 14:30" data-tim="광주시  광산구  목련로81(월곡동) 건우축산 01020861485 Hanh tam 2 Tat 2 1 la dua K1
-— — —
-Ok"><td class=macol></td><td class=spcol>Lá dứa</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma">80.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 광주시  광산구  목련로81(월곡동) 건우축산 01020861485 Hanh tam 2 Tat 2 1 la dua K1</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>80.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p2" class="pg" data-nguon="Kakao" data-nhom="Chốt đơn thuy tran"><h1>Thuy tran</h1><p class=sub>Nhóm: Chốt đơn thuy tran · còn nợ <b style="color:#C00000">524.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 07:30; Thanh Hien 윤정 · 22/06/2026 07:55" data-tim="K3
+Hanh tam 2
+Tat 2
+1 la dua
 
-충남 당진시 순성면 각재들길 19
-엄 기 환
-H.P: 010-9904-8381
-010-5815-8090
-10 lac tươi 83
+
+K1
 — — —
-Ok e"><td class=macol>K3<div class=ngayma>22/06/2026</div></td><td class=spcol>Lạc tươi</td><td class=slcol>10 kg</td><td class=num>83.000</td><td class="num tongma">83.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 충남 당진시 순성면 각재들길 19 &nbsp;·&nbsp; 엄 기 환 &nbsp;·&nbsp; 010-5815-8090</td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 08:52" data-tim="K4
-10kg lạc 83"><td class=macol>K4<div class=ngayma>22/06/2026</div></td><td class=spcol>Lạc</td><td class=slcol>10 kg</td><td class=num>83.000</td><td class="num tongma">83.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 09:36; Thanh Hien 윤정 · 22/06/2026 09:36" data-tim="K5
-
-경북 경주시 충효녹지길 44-15 
-
-아시아마트
-
-010 2642 5302
-
-5kg dau rong 102
+Ok"><td class=macol></td><td class=spcol>la dua</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma">80.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 광주시  광산구  목련로81(월곡동) &nbsp;·&nbsp; 건우축산 &nbsp;·&nbsp; 01020861485</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>80.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p2" class="pg" data-nguon="Kakao" data-nhom="Chốt đơn thuy tran"><h1>thuy tran</h1><p class=sub>Nhóm: Chốt đơn thuy tran · còn nợ <b style="color:#C00000">524.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 07:30; Thanh Hien 윤정 · 22/06/2026 07:55" data-tim="10 lac tươi 83
 — — —
-Ok"><td class=macol>K5<div class=ngayma>22/06/2026</div></td><td class=spcol>Đậu rồng</td><td class=slcol>5 kg</td><td class=num>102.000</td><td class="num tongma">102.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 경북 경주시 충효녹지길 44-15 &nbsp;·&nbsp; 아시아마트 &nbsp;·&nbsp; 010 2642 5302</td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 11:58; Thuy tran · 22/06/2026 13:03" data-tim="K6
-5 dau rong 102
+Ok e"><td class=macol>K3<div class=ngayma>22/06/2026</div></td><td class=spcol>lạc tươi</td><td class=slcol>10 kg</td><td class=num>83.000</td><td class="num tongma">83.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 08:52" data-tim="10kg lạc 83"><td class=macol>K4<div class=ngayma>22/06/2026</div></td><td class=spcol>lạc</td><td class=slcol>10 kg</td><td class=num>83.000</td><td class="num tongma">83.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 09:36; Thanh Hien 윤정 · 22/06/2026 09:36" data-tim="5kg dau rong 102
 — — —
-K6
-
-경기도 평택시 중앙로 1 (통복동 98-4)
-아시아마트
-원다혜   010  91018274
-5 chuoi bao 52"><td class=macol>K6<div class=ngayma>22/06/2026</div></td><td class=spcol>Đậu rồng</td><td class=slcol>5 kg</td><td class=num>102.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 11:58; Thuy tran · 22/06/2026 13:03" data-tim="K6
-5 dau rong 102
+Ok"><td class=macol>K5<div class=ngayma>22/06/2026</div></td><td class=spcol>dau rong</td><td class=slcol>5 kg</td><td class=num>102.000</td><td class="num tongma">102.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 11:58; Thuy tran · 22/06/2026 13:03; Thanh Hien 윤정 · 22/06/2026 13:22" data-tim="5 dau rong 102
 — — —
-K6
-
-경기도 평택시 중앙로 1 (통복동 98-4)
-아시아마트
-원다혜   010  91018274
-5 chuoi bao 52"><td class=macol></td><td class=spcol>Chuối bào</td><td class=slcol>5 kg</td><td class=num>52.000</td><td class="num tongma">154.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 경기도 평택시 중앙로 1 (통복동 98-4) &nbsp;·&nbsp; 아시아마트 &nbsp;·&nbsp; 원다혜   010  91018274</td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 20:06" data-tim="K7
-5 đậu rong 102"><td class=macol>K7<div class=ngayma>22/06/2026</div></td><td class=spcol>Đậu rồng</td><td class=slcol>5 kg</td><td class=num>102.000</td><td class="num tongma">102.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>524.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p3" class="pg" data-nguon="Kakao" data-nhom="DUNG CHOT DON (21/6)"><h1>Dung</h1><p class=sub>Nhóm: DUNG CHOT DON (21/6) · còn nợ <b style="color:#C00000">0 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Dung · 22/06/2026 15:30; Hằng Nga · 22/06/2026 15:57" data-tim="K2
+5 chuoi bao 52
+— — —
+Ok"><td class=macol>K6<div class=ngayma>22/06/2026</div></td><td class=spcol>dau rong</td><td class=slcol>5 kg</td><td class=num>102.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 11:58; Thuy tran · 22/06/2026 13:03; Thanh Hien 윤정 · 22/06/2026 13:22" data-tim="5 dau rong 102
+— — —
+5 chuoi bao 52
+— — —
+Ok"><td class=macol></td><td class=spcol>chuoi bao</td><td class=slcol>5 kg</td><td class=num>52.000</td><td class="num tongma">154.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Thuy tran · 22/06/2026 20:06; Thanh Hien 윤정 · 22/06/2026 20:08" data-tim="5 đậu rong 102
+— — —
+Rau t2 gui ... Đậu rồng 195k 5kg 102k"><td class=macol>K7<div class=ngayma>22/06/2026</div></td><td class=spcol>đậu rong</td><td class=slcol>5 kg</td><td class=num>102.000</td><td class="num tongma">102.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>524.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p3" class="pg" data-nguon="Kakao" data-nhom="DUNG CHOT DON (21/6)"><h1>Dung</h1><p class=sub>Nhóm: DUNG CHOT DON (21/6) · còn nợ <b style="color:#C00000">0 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Dung · 22/06/2026 15:30; Hằng Nga · 22/06/2026 15:57" data-tim="K2
 
 2ky bắp chuối tươi 
 
@@ -218,230 +163,59 @@ K6
 
 Momg phù du
 — — —
-Oke"><td class=macol>K2<div class=ngayma>22/06/2026</div></td><td class=spcol>Bắp chuối tươi</td><td class=slcol>2 kg</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 포항시 남구 오천읍 문덕로27-1 &nbsp;·&nbsp; 김근영 &nbsp;·&nbsp; 01037940627</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Không có bảng giá trong nhóm để tra cứu đơn giá bắp chuối tươi, cần xác nhận xem có áp dụng quy tắc Rau x7 không</td></tr><tr class=it onclick="ev(this)" data-ev="Dung · 22/06/2026 19:48" data-tim="K3(bt )
+Oke"><td class=macol>K2<div class=ngayma>22/06/2026</div></td><td class=spcol>Bắp chuối tươi</td><td class=slcol>2 kg</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 포항시 남구 오천읍 문덕로27-1 &nbsp;·&nbsp; 김근영 &nbsp;·&nbsp; 01037940627</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Thiếu đơn giá cho bắp chuối tươi</td></tr><tr class=it onclick="ev(this)" data-ev="Dung · 22/06/2026 19:48" data-tim="K3(bt )
 
 1kg la lốt ko cành
 
 010-4547-5442
 울산광역시 남구 월평로 246  2층
-Honey Memel 빵집"><td class=macol>K3<div class=ngayma>22/06/2026</div></td><td class=spcol>Lá lốt không cành</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 010-4547-5442 &nbsp;·&nbsp; 울산광역시 남구 월평로 246  2층 &nbsp;·&nbsp; Honey Memel 빵집</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Không có bảng giá trong nhóm để tra cứu đơn giá lá lốt không cành, cần xác nhận xem có áp dụng quy tắc Rau x7 không</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>0</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p4" class="pg" data-nguon="Kakao" data-nhom="nhóm diep"><h1>Ngọc Diệp</h1><p class=sub>Nhóm: nhóm diep · còn nợ <b style="color:#C00000">39.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 04:25" data-tim="D3
-
-전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아
-
-1kg bí dao 7
-1kg du đủ 7
-100 g lá trầu 4
-1nam ngư to 5
-1 bún tươi 2
-Tb 5k 
-
-30"><td class=macol>D3<div class=ngayma>22/06/2026</div></td><td class=spcol>bí đao</td><td class=slcol>1 kg</td><td class=num>7.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 04:25" data-tim="D3
-
-전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아
-
-1kg bí dao 7
-1kg du đủ 7
-100 g lá trầu 4
-1nam ngư to 5
-1 bún tươi 2
-Tb 5k 
-
-30"><td class=macol></td><td class=spcol>đu đủ</td><td class=slcol>1 kg</td><td class=num>7.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 04:25" data-tim="D3
-
-전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아
-
-1kg bí dao 7
-1kg du đủ 7
-100 g lá trầu 4
-1nam ngư to 5
-1 bún tươi 2
-Tb 5k 
-
-30"><td class=macol></td><td class=spcol>lá trầu</td><td class=slcol>1 100g</td><td class=num>4.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 04:25" data-tim="D3
-
-전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아
-
-1kg bí dao 7
-1kg du đủ 7
-100 g lá trầu 4
-1nam ngư to 5
-1 bún tươi 2
-Tb 5k 
-
-30"><td class=macol></td><td class=spcol>nam ngư to</td><td class=slcol>1 nam</td><td class=num>5.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 04:25" data-tim="D3
-
-전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아
-
-1kg bí dao 7
-1kg du đủ 7
-100 g lá trầu 4
-1nam ngư to 5
-1 bún tươi 2
-Tb 5k 
-
-30"><td class=macol></td><td class=spcol>bún tươi</td><td class=slcol>1 gói</td><td class=num>2.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 04:25" data-tim="D3
-
-전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아
-
-1kg bí dao 7
-1kg du đủ 7
-100 g lá trầu 4
-1nam ngư to 5
-1 bún tươi 2
-Tb 5k 
-
-30"><td class=macol></td><td class=spcol>Thùng bọt</td><td class=slcol>1 thùng</td><td class=num>5.000</td><td class="num tongma">30.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아</td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 16:35" data-tim="D4
-
-204 호
-01023151368
-
-100g lá trầu 
-Tb 5k 
-
-9"><td class=macol>D4<div class=ngayma>22/06/2026</div></td><td class=spcol>lá trầu</td><td class=slcol>1 100g</td><td class=num>4.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 2026-06-22 16:35" data-tim="D4
-
-204 호
-01023151368
-
-100g lá trầu 
-Tb 5k 
-
-9"><td class=macol></td><td class=spcol>Thùng bọt</td><td class=slcol>1 thùng</td><td class=num>5.000</td><td class="num tongma">9.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 204 호 &nbsp;·&nbsp; 01023151368</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>39.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p5" class="pg" data-nguon="Kakao" data-nhom="Nhom trân ctv"><h1>Ngọc Trân</h1><p class=sub>Nhóm: Nhom trân ctv · còn nợ <b style="color:#C00000">47.100 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Trân · 22/06/2026 08:00; Ngọc Trân · 22/06/2026 11:59; Co lee · 22/06/2026 12:00" data-tim="D2
-Nguyễn chi 
-
-대구광역시 동구방촌로1길125-1 
-01035079299
-
-1 kg rau thì là VN (tươi).12k
+Honey Memel 빵집"><td class=macol>K3(bt)<div class=ngayma>22/06/2026</div></td><td class=spcol>Lá lốt không cành</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 010-4547-5442 &nbsp;·&nbsp; 울산광역시 남구 월평로 246  2층 &nbsp;·&nbsp; Honey Memel 빵집</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Thiếu đơn giá cho lá lốt không cành</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>0</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p4" class="pg" data-nguon="Kakao" data-nhom="nhóm diep"><h1>Ngọc Diệp</h1><p class=sub>Nhóm: nhóm diep · còn nợ <b style="color:#C00000">39.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 04:25" data-tim="D3 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아 1kg bí dao 7 1kg du đủ 7 100 g lá trầu 4 1nam ngư to 5 1 bún tươi 2 Tb 5k 30"><td class=macol>D3<div class=ngayma>22/06/2026</div></td><td class=spcol>bí dao</td><td class=slcol>1 kg</td><td class=num>7.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 04:25" data-tim="D3 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아 1kg bí dao 7 1kg du đủ 7 100 g lá trầu 4 1nam ngư to 5 1 bún tươi 2 Tb 5k 30"><td class=macol></td><td class=spcol>du đủ</td><td class=slcol>1 kg</td><td class=num>7.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 04:25" data-tim="D3 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아 1kg bí dao 7 1kg du đủ 7 100 g lá trầu 4 1nam ngư to 5 1 bún tươi 2 Tb 5k 30"><td class=macol></td><td class=spcol>lá trầu</td><td class=slcol>1 100g</td><td class=num>4.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 04:25" data-tim="D3 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아 1kg bí dao 7 1kg du đủ 7 100 g lá trầu 4 1nam ngư to 5 1 bún tươi 2 Tb 5k 30"><td class=macol></td><td class=spcol>nam ngư to</td><td class=slcol>1 bó</td><td class=num>5.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 04:25" data-tim="D3 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아 1kg bí dao 7 1kg du đủ 7 100 g lá trầu 4 1nam ngư to 5 1 bún tươi 2 Tb 5k 30"><td class=macol></td><td class=spcol>bún tươi</td><td class=slcol>1 gói</td><td class=num>2.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 04:25" data-tim="D3 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아 1kg bí dao 7 1kg du đủ 7 100 g lá trầu 4 1nam ngư to 5 1 bún tươi 2 Tb 5k 30"><td class=macol></td><td class=spcol>Tb (Thùng bay)</td><td class=slcol>1 thùng</td><td class=num>5.000</td><td class="num tongma">30.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: D3 전북특별자치도 군산시 오식도동 644-3 금호빌 402호 . 01055397604 이지아 1kg bí dao 7 1kg du đủ 7 100 g lá trầu 4 1nam ngư to 5 1 bún tươi 2 Tb 5k 30</td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 16:35" data-tim="D4 204 호 01023151368 100g lá trầu Tb 5k 9"><td class=macol>D4<div class=ngayma>22/06/2026</div></td><td class=spcol>lá trầu</td><td class=slcol>1 100g</td><td class=num>4.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Diệp · 22/06/2026 16:35" data-tim="D4 204 호 01023151368 100g lá trầu Tb 5k 9"><td class=macol></td><td class=spcol>Tb (Thùng bay)</td><td class=slcol>1 thùng</td><td class=num>5.000</td><td class="num tongma">9.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: D4 204 호 01023151368 100g lá trầu Tb 5k 9</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>39.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p5" class="pg" data-nguon="Kakao" data-nhom="Nhom trân ctv"><h1>Ngọc Trân</h1><p class=sub>Nhóm: Nhom trân ctv · còn nợ <b style="color:#C00000">47.100 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Trân · 21/06/2026 22:43; Co lee · 21/06/2026 11:35" data-tim="1 qủa sầu riêng 3kg ( lấy qủa chín
+— — —
+Sr c ban het roi e oi"><td class=macol>D1<div class=ngayma>21/06/2026</div></td><td class=spcol>Sầu riêng</td><td class=slcol>quả</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Trân · 22/06/2026 08:00; Ngọc Trân · 22/06/2026 11:59; Co lee · 22/06/2026 12:00" data-tim="1 kg rau thì là VN (tươi).12k
 — — —
 Gửi rau thì là nha chị
 — — —
-Ok e"><td class=macol>D2<div class=ngayma>22/06/2026</div></td><td class=spcol>rau thì là VN (tươi)</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma">12.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 대구광역시 동구방촌로1길125-1 &nbsp;·&nbsp; 01035079299</td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Trân · 22/06/2026 13:47; Hằng Nga · 22/06/2026 14:27; Ngọc Trân · 22/06/2026 14:29; Hằng Nga · 22/06/2026 14:30" data-tim="3kg cá diêu hồng*13
+Ok e"><td class=macol>D2<div class=ngayma>22/06/2026</div></td><td class=spcol>Rau thì là VN (tươi)</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma">12.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Ngọc Trân · 22/06/2026 13:47; Hằng Nga · 22/06/2026 14:27; Ngọc Trân · 22/06/2026 14:29" data-tim="3kg cá diêu hồng*13
 — — —
 2 con thì 2,7kg thôi
 — — —
-2con thôi chị
+2con thôi chị"><td class=macol>D3<div class=ngayma>22/06/2026</div></td><td class=spcol>Cá diêu hồng</td><td class=slcol>2.7 kg</td><td class=num>35.100</td><td class="num tongma">35.100</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>47.100</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p6" class="pg" data-nguon="Kakao" data-nhom="🍎🍎 Gửi Đơn Hoa quả"><h1>은하</h1><p class=sub>Nhóm: 🍎🍎 Gửi Đơn Hoa quả · còn nợ <b style="color:#C00000">22.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="은하 · 22/06/2026 04:45; 은하 · 22/06/2026 10:00; Co lee · 22/06/2026 10:51" data-tim="Đ2
+
+2kg lạc tươi 22k btb
+
+경기 의정부시 호원동 340-22 2층
+01055183266
+Tuấn
 — — —
-Photo"><td class=macol>D3<div class=ngayma>22/06/2026</div></td><td class=spcol>cá diêu hồng</td><td class=slcol>2.7 kg</td><td class=num>35.100</td><td class="num tongma">35.100</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>47.100</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p6" class="pg" data-nguon="Kakao" data-nhom="Đơn hàng 5206"><h1>Phương Anh</h1><p class=sub>Nhóm: Đơn hàng 5206 · còn nợ <b style="color:#C00000">0 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Phương Anh · 22/06/2026 13:07" data-tim="huy e lên đơn lại sau ve01"><td class=macol>ve01<div class=ngayma>22/06/2026</div></td><td class=spcol>—</td><td class=slcol></td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>0</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p7" class="pg" data-nguon="Kakao" data-nhom="Đơn hàng 5206"><h1>SI LE HANG CTY</h1><p class=sub>Nhóm: Đơn hàng 5206 · còn nợ <b style="color:#C00000">0 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="SI LE HANG CTY · 22/06/2026 13:36; Thanh Hien 윤정 · 22/06/2026 13:36; Thanh Hien 윤정 · 22/06/2026 14:15" data-tim="Đổi đc này e vs c. 충남 서산시 시장2로22, 1층 (동문동) 김서연 010-7743-6559. Đc quán 6559
+Chốt đơn giúp e
 — — —
-Huy ho c 2 don luon nhe
+Ok e"><td class=macol>Đ2<div class=ngayma>22/06/2026</div></td><td class=spcol>lạc tươi</td><td class=slcol>2 kg</td><td class=num>22.000</td><td class="num tongma">22.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 경기 의정부시 호원동 340-22 2층 &nbsp;·&nbsp; 01055183266</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Chưa rõ &#x27;22k btb&#x27; là đơn giá hay tổng tiền, và &#x27;btb&#x27; có phải là bao phí ship (taekbae) hay không.</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>22.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p7" class="pg" data-nguon="Kakao" data-nhom="🍎🍎 Gửi Đơn Hoa quả"><h1>Su su</h1><p class=sub>Nhóm: 🍎🍎 Gửi Đơn Hoa quả · còn nợ <b style="color:#C00000">12.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Su su · 22/06/2026 11:10; Co lee · 22/06/2026 11:31" data-tim="D3:tr
+1kg rau nhút 12
+Tb
+서울특별시 강서구 마곡중앙6로 85
+[07803]
+8 층 802호
+01079181998 ngọc dũng
 — — —
-Uh hiy ho c nhe"><td class=macol>6559<div class=ngayma>22/06/2026</div></td><td class=spcol>—</td><td class=slcol></td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: Đổi đc này e vs c. 충남 서산시 시장2로22, 1층 (동문동) 김서연 010-7743-6559. Đc quán 6559</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>0</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p8" class="pg" data-nguon="Kakao" data-nhom="🍎🍎 Gửi Đơn Hoa quả"><h1>은하</h1><p class=sub>Nhóm: 🍎🍎 Gửi Đơn Hoa quả · còn nợ <b style="color:#C00000">22.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="은하 · 22/06/2026 04:45; Co lee · 22/06/2026 10:51" data-tim="Đ2 2kg lạc tươi 22k btb 경기 의정부시 호원동 340-22 2층 01055183266 Tuấn
+Ok"><td class=macol>D3<div class=ngayma>22/06/2026</div></td><td class=spcol>rau nhút</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma">12.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 서울특별시 강서구 마곡중앙6로 85 &nbsp;·&nbsp; 8 층 802호</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Cần xác nhận phí ship Taekbae (Tb) có cộng thêm vào đơn hay không.</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>12.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p8" class="pg" data-nguon="Kakao" data-nhom="hân"><h1>Trần Gia Hân 2</h1><p class=sub>Nhóm: hân · còn nợ <b style="color:#C00000">0 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Trần Gia Hân 2 · 22/06/2026 10:04; Co lee · 22/06/2026 10:46" data-tim="Hân 1 경기도 시흥시 정왕동 2030-6 303호 이하나 010 7669 9943 500gam nghệ củ tươi
 — — —
-Ok e"><td class=macol>Đ2<div class=ngayma>22/06/2026</div></td><td class=spcol>lạc tươi</td><td class=slcol>2 kg</td><td class=num>22.000</td><td class="num tongma">22.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: Đ2 2kg lạc tươi 22k btb 경기 의정부시 호원동 340-22 2층 01055183266 Tuấn</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Cần xác nhận 22k là tổng tiền hay đơn giá/kg cho món lạc tươi</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>22.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p9" class="pg" data-nguon="Kakao" data-nhom="🍎🍎 Gửi Đơn Hoa quả"><h1>Su su</h1><p class=sub>Nhóm: 🍎🍎 Gửi Đơn Hoa quả · còn nợ <b style="color:#C00000">12.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Su su · 22/06/2026 11:10; Co lee · 22/06/2026 11:31" data-tim="D3:tr 1kg rau nhút 12 Tb 서울특별시 강서구 마곡중앙6로 85 [07803] 8 층 802호 01079181998 ngọc dũng
-— — —
-Ok"><td class=macol>D3<div class=ngayma>22/06/2026</div></td><td class=spcol>rau nhút</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma">12.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: D3:tr 1kg rau nhút 12 Tb 서울특별시 강서구 마곡중앙6로 85 [07803] 8 층 802호 01079181998 ngọc dũng</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>12.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p10" class="pg" data-nguon="Kakao" data-nhom="hân"><h1>Trần Gia Hân 2</h1><p class=sub>Nhóm: hân · còn nợ <b style="color:#C00000">0 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Trần Gia Hân 2 · 22/06/2026 10:04; Co lee · 22/06/2026 10:46" data-tim="500gam nghệ củ tươi
-— — —
-C ko co cu nghe"><td class=macol>Hân 1<div class=ngayma>22/06/2026</div></td><td class=spcol>Nghệ củ tươi</td><td class=slcol>gam</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>0</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p11" class="pg" data-nguon="Messenger FB" data-nhom="Nhom rau vn"><h1>Rau Việt Nam</h1><p class=sub>Nhóm: Nhom rau vn (FB) · còn nợ <b style="color:#C00000">132.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 8:38sáng" data-tim="K1 
-2kg đậu rồng 49k
-
-hongsa hattaya 
-01029442459
-대구광역시 남구 효성로24 ( ploy mart )"><td class=macol>K1<div class=ngayma>22/06/2026</div></td><td class=spcol>Đậu rồng</td><td class=slcol>2 kg</td><td class=num>49.000</td><td class="num tongma">49.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 01029442459 &nbsp;·&nbsp; 대구광역시 남구 효성로24 ( ploy mart )</td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:19sáng" data-tim="K2 
-10kg lac xt đẹp 83k 
-
-Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T 
- FoodMart(베트남 마트) 01085241016
-010-7627-1975"><td class=macol>K2<div class=ngayma>22/06/2026</div></td><td class=spcol>Lạc xt đẹp</td><td class=slcol>10 kg</td><td class=num>83.000</td><td class="num tongma">83.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T &nbsp;·&nbsp; FoodMart(베트남 마트) 01085241016 &nbsp;·&nbsp; 010-7627-1975</td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol>K3<div class=ngayma>22/06/2026</div></td><td class=spcol>Sả</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Lá lốt cành</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Tắc</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Ngò gai</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Tía tô</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중) &nbsp;·&nbsp; 010-8061-6686</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Đơn hàng không ghi giá và không có bảng giá đi kèm để tra cứu</td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:45sáng" data-tim="K4. 
-2kg  thiên lý
-1kg đậu rồng
-500gr diếp cá
-500gr rau má
-1kg húng quế
-
-Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T 
- FoodMart(베트남 마 t) 01085241016
-010-7627-1975"><td class=macol>K4<div class=ngayma>22/06/2026</div></td><td class=spcol>Thiên lý</td><td class=slcol>2 kg</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:45sáng" data-tim="K4. 
-2kg  thiên lý
-1kg đậu rồng
-500gr diếp cá
-500gr rau má
-1kg húng quế
-
-Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T 
- FoodMart(베트남 마 t) 01085241016
-010-7627-1975"><td class=macol></td><td class=spcol>Đậu rồng</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:45sáng" data-tim="K4. 
-2kg  thiên lý
-1kg đậu rồng
-500gr diếp cá
-500gr rau má
-1kg húng quế
-
-Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T 
- FoodMart(베트남 마 t) 01085241016
-010-7627-1975"><td class=macol></td><td class=spcol>Diếp cá</td><td class=slcol>500 gr</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:45sáng" data-tim="K4. 
-2kg  thiên lý
-1kg đậu rồng
-500gr diếp cá
-500gr rau má
-1kg húng quế
-
-Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T 
- FoodMart(베트남 마 t) 01085241016
-010-7627-1975"><td class=macol></td><td class=spcol>Rau má</td><td class=slcol>500 gr</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 22/06/2026 Thứ Hai 9:45sáng" data-tim="K4. 
-2kg  thiên lý
-1kg đậu rồng
-500gr diếp cá
-500gr rau má
-1kg húng quế
-
-Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T 
- FoodMart(베트남 마 t) 01085241016
-010-7627-1975"><td class=macol></td><td class=spcol>Húng quế</td><td class=slcol>1 kg</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T &nbsp;·&nbsp; FoodMart(베트남 마 t) 01085241016 &nbsp;·&nbsp; 010-7627-1975</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Đơn hàng không ghi giá và không có bảng giá đi kèm để tra cứu</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>132.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p12" class="pg" data-nguon="Messenger FB" data-nhom="Hang nha Tina"><h1>Hàng nhà Tina</h1><p class=sub>Nhóm: Hang nha Tina (FB) · còn nợ <b style="color:#C00000">292.040 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st><col class=c-an></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th><th>Ảnh</th></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao Hien (FB) · 22/06/2026 Thứ Hai 12:27ch; Hệ thống OCR · 22/06/2026 N/A; Hệ thống OCR · 22/06/2026 N/A" data-tim="Rau tat ca x7 
+C ko co cu nghe"><td class=macol>Hân 1<div class=ngayma>22/06/2026</div></td><td class=spcol>nghệ củ tươi</td><td class=slcol>gam</td><td class=num>0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: Hân 1 경기도 시흥시 정왕동 2030-6 303호 이하나 010 7669 9943 500gam nghệ củ tươi</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>0</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p9" class="pg" data-nguon="Messenger FB" data-nhom="Hang nha Tina"><h1>Hàng nhà Tina</h1><p class=sub>Nhóm: Hang nha Tina (FB) · còn nợ <b style="color:#C00000">467.080 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st><col class=c-an></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th><th>Ảnh</th></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao Hien · 22/06/2026 Thứ Hai 12:27ch; Hoa Anh Dao Hien · 22/06/2026 Thứ Hai 12:27ch; Hệ thống (Ảnh) · 22/06/2026 N/A; Hệ thống (Ảnh) · 22/06/2026 N/A" data-tim="Rau tat ca x7 
 Thùng tru 2kg 1th 
 Tla x15
+— — —
 Hnay tla co 4 cay
 — — —
-[Ảnh]: CAS 21.84 kg
+Ảnh cân CAS: 21.84 kg
 — — —
-[Ảnh]: 23.88"><td class=macol>TINA<div class=ngayma>22/06/2026</div></td><td class=spcol>Thùng hàng 1 (CAS 21.84kg)</td><td class=slcol>19.84 kg</td><td class=num>138.880</td><td class="num tongma"></td><td class=ttcol></td><td class="imgc imgrau" rowspan=3><img class=thumb data-im="0" onclick="event.stopPropagation();zoomu(this)"><img class=thumb data-im="1" onclick="event.stopPropagation();zoomu(this)"></td></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao Hien (FB) · 22/06/2026 Thứ Hai 12:27ch; Hệ thống OCR · 22/06/2026 N/A; Hệ thống OCR · 22/06/2026 N/A" data-tim="Rau tat ca x7 
+Ảnh cân: 23.88"><td class=macol>TINA<div class=ngayma>22/06/2026</div></td><td class=spcol>Rau (chưa rõ loại)</td><td class=slcol>19.84 kg</td><td class=num>138.880</td><td class="num tongma"></td><td class=ttcol></td><td class="imgc imgrau" rowspan=3><img class=thumb data-im="0" onclick="event.stopPropagation();zoomu(this)"><img class=thumb data-im="1" onclick="event.stopPropagation();zoomu(this)"></td></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao Hien · 22/06/2026 Thứ Hai 12:27ch; Hoa Anh Dao Hien · 22/06/2026 Thứ Hai 12:27ch; Hệ thống (Ảnh) · 22/06/2026 N/A; Hệ thống (Ảnh) · 22/06/2026 N/A" data-tim="Rau tat ca x7 
 Thùng tru 2kg 1th 
 Tla x15
+— — —
 Hnay tla co 4 cay
 — — —
-[Ảnh]: CAS 21.84 kg
+Ảnh cân CAS: 21.84 kg
 — — —
-[Ảnh]: 23.88"><td class=macol></td><td class=spcol>Thùng hàng 2 (23.88kg)</td><td class=slcol>21.88 kg</td><td class=num>153.160</td><td class="num tongma">292.040</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Chưa rõ 2 thùng cân (21.84kg và 23.88kg) cụ thể là loại rau nào (rau thường x7 hay thì là x15) và chưa rõ chi tiết &#x27;tla co 4 cay&#x27; là bao nhiêu kg.</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>292.040</td><td></td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section>
+Ảnh cân: 23.88"><td class=macol></td><td class=spcol>Thì là</td><td class=slcol>21.88 kg</td><td class=num>328.200</td><td class="num tongma">467.080</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Chưa xác định rõ thùng nào là rau, thùng nào là thì là. Cần làm rõ &#x27;tla co 4 cay&#x27; và khớp chính xác với 2 ảnh cân nặng 21.84kg và 23.88kg.</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>467.080</td><td></td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section>
 <div class=foot>Sổ công nợ nhóm Rau (Kakao)</div>
 </div>
 <div id=lb onclick="this.classList.remove('on')"><span class=x>×</span><img id=lbi></div>
