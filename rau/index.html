@@ -97,128 +97,190 @@ body.editing td.num{background:#fff7d6;outline:1px dashed #d4a017}
 body.editing td.num:focus{background:#fff;outline:2px solid #1F6E43}
 </style><style>.giaobox{background:#eef4fb;border:1px solid #d3e2f2;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:13px;color:#1F4E78;line-height:1.5}.evhint{font-size:11px;color:#888;font-style:italic;margin:6px 2px}.ctvlink{color:#1155CC;font-weight:700;cursor:pointer}.card .it{cursor:pointer}.card .it:hover td{background:#eef6ea}.detw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:6px}.det{width:100%;table-layout:fixed;border-collapse:collapse}.det th,.det td{padding:6px 8px;vertical-align:top;word-wrap:break-word}.det .c-sl{width:58px}.det .c-tt{width:84px}.det .c-tg{width:78px}.det .c-st{width:96px}.det .c-ma{width:92px}.det .c-an{width:62px}.det td.num,.det td.tongma{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.det td.macol{font-weight:700;color:#1F6E43;word-break:break-word;line-height:1.3}.det td.tongma{font-weight:700;color:#111}.det td.slcol{white-space:nowrap;color:#333}.det td.spcol{color:#111}.det td.ttcol{font-size:12px;line-height:1.35}.ngayma{font-size:10px;color:#8a8f98;font-weight:400;margin-top:2px}.tt-no{color:#C00000;font-weight:700}.tt-ok{color:#1F6E43;font-weight:700}.tt-duyet{color:#B26A00;font-weight:700;font-size:11px}.det tr.duyetrow td{background:#fff7e6;color:#B26A00;font-size:12px;padding:5px 10px}.det tr.giaorow td{background:#eef4fb;color:#1F4E78;font-size:12px;padding:5px 10px}.det tr.curow td{background:#fbeaea;color:#C00000;font-weight:700}.det tr.tongall td{background:#fde7e7;color:#C00000;font-weight:800;font-size:15px}.det td.imgc{padding:3px;text-align:center;vertical-align:middle}.det td.imgc img.thumb{width:52px;height:52px;display:block;margin:3px auto;border-radius:5px;border:1px solid #cdd7e0;cursor:zoom-in;object-fit:cover}.card.warn{border:2px solid #E69500;background:#fff7e6}.card.warn .ct{color:#B26A00}.warnul{margin:6px 0 2px 0;padding-left:20px;color:#8a5200;font-size:13px;line-height:1.6}@media(max-width:560px){.det{font-size:12px}.det th,.det td{padding:4px 5px}.det .c-sl{width:46px}.det .c-tt{width:66px}.det .c-tg{width:60px}.det .c-st{width:72px}.det .c-ma{width:60px}.det .c-an{width:46px}.det td.imgc img.thumb{width:42px;height:42px}.ngayma{font-size:9px}}</style><script>(function(){function inf(){var a=document.querySelector('section.pg.on');return {ng:(a&&a.dataset.nguon)||'Kakao / Messenger FB',nh:(a&&a.dataset.nhom)||''};}new MutationObserver(function(){var cb=document.querySelector('#evt .copytin');if(cb&&!cb.dataset.fx){cb.dataset.fx='1';var f=inf();var lbl=f.nh?('nhóm \u201C'+f.nh+'\u201D trên '+f.ng):f.ng;cb.textContent='\uD83D\uDCCB Copy tin — tìm '+lbl;var nt=cb.nextElementSibling;if(nt)nt.textContent='\u26A0 Mở '+f.ng+', vào '+(f.nh?('nhóm \u201C'+f.nh+'\u201D'):'nhóm')+' dán nội dung vào ô tìm kiếm để tìm tin gốc.';var orig=cb.onclick;cb.onclick=function(e){if(orig)orig.call(cb,e);setTimeout(function(){cb.textContent='\u2713 Đã copy — mở '+f.ng+' tìm '+lbl+', dán vào ô tìm kiếm';},0);};}}).observe(document.documentElement,{childList:true,subtree:true});})();</script></head><body><div class=wrap>
 
-<div class=tabs><button class="tab on" onclick="go('__dash')">Tổng quan</button><button class="tab" onclick="go('p0')">Rau Việt Nam</button><button class="tab" onclick="go('p1')">Tina</button></div>
-<section id="__dash" class="pg on"><h1>Sổ công nợ — Rau (Kakao + Facebook)</h1><p class=sub>Cập nhật 2026-06-23 · CTV lấy hàng → còn nợ chị Hiền</p><div class="card red"><div class=ct>CỘNG TÁC VIÊN CÒN NỢ CHỊ HIỀN</div><table><tr><th>Cộng tác viên</th><th>Nhóm</th><th>Tình trạng</th><th class=num>Còn nợ (won)</th></tr><tr class=it onclick="go('p0')"><td><a class=ctvlink>Rau Việt Nam ›</a></td><td>Nhom rau vn (FB)</td><td>5 đơn chưa trả</td><td class=num>1.132.000</td></tr><tr class=it onclick="go('p1')"><td><a class=ctvlink>Tina ›</a></td><td>Hang nha Tina (FB)</td><td>1 đơn chưa trả</td><td class=num>467.080</td></tr><tr class=tot><td colspan=3>TỔNG CTV CÒN NỢ</td><td class=num>1.599.080</td></tr></table></div><p class=note>Bấm tên cộng tác viên để xem chi tiết từng đơn + ghi chú rõ ràng, chi tiết.</p></section><section id="p0" class="pg" data-nguon="Messenger FB" data-nhom="Nhom rau vn"><h1>Rau Việt Nam</h1><p class=sub>Nhóm: Nhom rau vn (FB) · còn nợ <b style="color:#C00000">1.132.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · 06/05/2024 Thứ Hai 8:38sáng" data-tim="K1 
-2kg đậu rồng 49k
-
-hongsa hattaya 
-01029442459
-대구광역시 남구 효성로24 ( ploy mart )"><td class=macol>K1<div class=ngayma>06/05/2024</div></td><td class=spcol>Đậu rồng</td><td class=slcol>2 kg</td><td class=num>49.000</td><td class="num tongma">49.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 01029442459 &nbsp;·&nbsp; 대구광역시 남구 효성로24 ( ploy mart )</td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · 06/05/2024 Thứ Hai 9:19sáng" data-tim="K2 
-10kg lac xt đẹp 83k 
-
-Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T 
- FoodMart(베트남 마트) 01085241016
-010-7627-1975"><td class=macol>K2<div class=ngayma>06/05/2024</div></td><td class=spcol>Lạc tươi xt</td><td class=slcol>10 kg</td><td class=num>830.000</td><td class="num tongma">830.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: Địa chỉ quán : 경상북도 경주시 대안길 21  T&amp;T &nbsp;·&nbsp; FoodMart(베트남 마트) 01085241016 &nbsp;·&nbsp; 010-7627-1975</td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Cần xác nhận đơn giá lạc tươi xt là 83k/kg hay 83k/10kg. Tạm tính theo đơn giá 83k/kg.</td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · 06/05/2024 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol>K3<div class=ngayma>06/05/2024</div></td><td class=spcol>Sả</td><td class=slcol>1 kg</td><td class=num>7.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · 06/05/2024 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Lá lốt cành</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · 06/05/2024 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Tắc</td><td class=slcol>1 kg</td><td class=num>21.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · 06/05/2024 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Ngò gai</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · 06/05/2024 Thứ Hai 9:36sáng" data-tim="K3 
-Sả 1kg
-Lá lốt cành 1kg 
-Tắc 1kg 
-Ngò gai 1kg 
-Tía tô 1kg 
-
-인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중)
-010-8061-6686"><td class=macol></td><td class=spcol>Tía tô</td><td class=slcol>1 kg</td><td class=num>11.000</td><td class="num tongma">63.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 인천광역시 연수구 송도동 23-4 더샵 센트럴파크2, 제에이동 제 1층 134호( 운로 옆에 공사중) &nbsp;·&nbsp; 010-8061-6686</td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 06/05/2024 Thứ Hai 15:12ch" data-tim="K6 
-Ngót-3kg
-Lá sung-1kg
-Lá giang-1kg
-Đinh lăng-1kg
-Ngò gai -2kg
-
-광up광역시-광산구-산정공원로79,1층 오케이 아시아마트
-오케 아시아마트:010-6403-1984"><td class=macol>K6<div class=ngayma>06/05/2024</div></td><td class=spcol>Rau ngót</td><td class=slcol>3 kg</td><td class=num>39.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 06/05/2024 Thứ Hai 15:12ch" data-tim="K6 
-Ngót-3kg
-Lá sung-1kg
-Lá giang-1kg
-Đinh lăng-1kg
-Ngò gai -2kg
-
-광up광역시-광산구-산정공원로79,1층 오케이 아시아마트
-오케 아시아마트:010-6403-1984"><td class=macol></td><td class=spcol>Lá sung</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 06/05/2024 Thứ Hai 15:12ch" data-tim="K6 
-Ngót-3kg
-Lá sung-1kg
-Lá giang-1kg
-Đinh lăng-1kg
-Ngò gai -2kg
-
-광up광역시-광산구-산정공원로79,1층 오케이 아시아마트
-오케 아시아마트:010-6403-1984"><td class=macol></td><td class=spcol>Lá giang</td><td class=slcol>1 kg</td><td class=num>13.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 06/05/2024 Thứ Hai 15:12ch" data-tim="K6 
-Ngót-3kg
-Lá sung-1kg
-Lá giang-1kg
-Đinh lăng-1kg
-Ngò gai -2kg
-
-광up광역시-광산구-산정공원로79,1층 오케이 아시아마트
-오케 아시아마트:010-6403-1984"><td class=macol></td><td class=spcol>Đinh lăng</td><td class=slcol>1 kg</td><td class=num>13.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 06/05/2024 Thứ Hai 15:12ch" data-tim="K6 
-Ngót-3kg
-Lá sung-1kg
-Lá giang-1kg
-Đinh lăng-1kg
-Ngò gai -2kg
-
-광up광역시-광산구-산정공원로79,1층 오케이 아시아마트
-오케 아시아마트:010-6403-1984"><td class=macol></td><td class=spcol>Ngò gai</td><td class=slcol>2 kg</td><td class=num>24.000</td><td class="num tongma">101.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 광up광역시-광산구-산정공원로79,1층 오케이 아시아마트 &nbsp;·&nbsp; 오케 아시아마트:010-6403-1984</td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 06/05/2024 Thứ Hai 15:13ch" data-tim="K7. 
-5kg rau ngót 
-2kg hoa chuối 
-
-서울 종로구 창신길41
-아시아야채
-010 2421 8789"><td class=macol>K7<div class=ngayma>06/05/2024</div></td><td class=spcol>Rau ngót</td><td class=slcol>5 kg</td><td class=num>65.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Rau Việt Nam · 06/05/2024 Thứ Hai 15:13ch" data-tim="K7. 
-5kg rau ngót 
-2kg hoa chuối 
-
-서울 종로구 창신길41
-아시아야채
-010 2421 8789"><td class=macol></td><td class=spcol>Hoa chuối</td><td class=slcol>2 kg</td><td class=num>24.000</td><td class="num tongma">89.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=giaorow><td></td><td colspan=5>📍 Giao đến: 서울 종로구 창신길41 &nbsp;·&nbsp; 아시아야채 &nbsp;·&nbsp; 010 2421 8789</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>1.132.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p1" class="pg" data-nguon="Messenger FB" data-nhom="Hang nha Tina"><h1>Tina</h1><p class=sub>Nhóm: Hang nha Tina (FB) · còn nợ <b style="color:#C00000">467.080 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st><col class=c-an></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th><th>Ảnh</th></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao · 21/10/2024 Thứ Hai 12:02ch; Hoa Anh Dao Hien · 21/10/2024 Thứ Hai 12:27ch; Hệ thống (OCR) · 21/10/2024 N/A; Hệ thống (OCR) · 21/10/2024 N/A" data-tim="Hàng nha tina
+<div class=tabs><button class="tab on" onclick="go('__dash')">Tổng quan</button><button class="tab" onclick="go('p0')">Việt Nam</button><button class="tab" onclick="go('p1')">Hàng nhà Tina</button></div>
+<section id="__dash" class="pg on"><h1>Sổ công nợ — Rau (Kakao + Facebook)</h1><p class=sub>Cập nhật  · CTV lấy hàng → còn nợ chị Hiền</p><div class="card red"><div class=ct>CỘNG TÁC VIÊN CÒN NỢ CHỊ HIỀN</div><table><tr><th>Cộng tác viên</th><th>Nhóm</th><th>Tình trạng</th><th class=num>Còn nợ (won)</th></tr><tr class=it onclick="go('p0')"><td><a class=ctvlink>Việt Nam ›</a></td><td>Nhom rau vn (FB)</td><td>8 đơn chưa trả</td><td class=num>542.000</td></tr><tr class=it onclick="go('p1')"><td><a class=ctvlink>Hàng nhà Tina ›</a></td><td>Hang nha Tina (FB)</td><td>1 đơn chưa trả</td><td class=num>352.040</td></tr><tr class=tot><td colspan=3>TỔNG CTV CÒN NỢ</td><td class=num>894.040</td></tr></table></div><p class=note>Bấm tên cộng tác viên để xem chi tiết từng đơn + ghi chú rõ ràng, chi tiết.</p></section><section id="p0" class="pg" data-nguon="Messenger FB" data-nhom="Nhom rau vn"><h1>Việt Nam</h1><p class=sub>Nhóm: Nhom rau vn (FB) · còn nợ <b style="color:#C00000">542.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Chủ Nhật Chủ Nhật 6:34sáng; Hoa Anh Dao · Chủ Nhật Chủ Nhật 10:59sáng" data-tim="K1 
+1kg tắc
+500gr. Ngò gai 
+500gr Lá mơ 
+Ngò rí 1kg
+Diếp cá 1kg
+Lá lốt cành đẹp 1kg
 — — —
-Rau tat ca x7 
+Ok"><td class=macol>K1 (Chủ Nhật)<div class=ngayma>Chủ Nhật</div></td><td class=spcol>Tắc</td><td class=slcol>1 kg</td><td class=num>21.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Chủ Nhật Chủ Nhật 6:34sáng; Hoa Anh Dao · Chủ Nhật Chủ Nhật 10:59sáng" data-tim="K1 
+1kg tắc
+500gr. Ngò gai 
+500gr Lá mơ 
+Ngò rí 1kg
+Diếp cá 1kg
+Lá lốt cành đẹp 1kg
+— — —
+Ok"><td class=macol></td><td class=spcol>Ngò gai</td><td class=slcol>0.5 kg</td><td class=num>6.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Chủ Nhật Chủ Nhật 6:34sáng; Hoa Anh Dao · Chủ Nhật Chủ Nhật 10:59sáng" data-tim="K1 
+1kg tắc
+500gr. Ngò gai 
+500gr Lá mơ 
+Ngò rí 1kg
+Diếp cá 1kg
+Lá lốt cành đẹp 1kg
+— — —
+Ok"><td class=macol></td><td class=spcol>Lá mơ</td><td class=slcol>0.5 kg</td><td class=num>6.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Chủ Nhật Chủ Nhật 6:34sáng; Hoa Anh Dao · Chủ Nhật Chủ Nhật 10:59sáng" data-tim="K1 
+1kg tắc
+500gr. Ngò gai 
+500gr Lá mơ 
+Ngò rí 1kg
+Diếp cá 1kg
+Lá lốt cành đẹp 1kg
+— — —
+Ok"><td class=macol></td><td class=spcol>Ngò rí</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Chủ Nhật Chủ Nhật 6:34sáng; Hoa Anh Dao · Chủ Nhật Chủ Nhật 10:59sáng" data-tim="K1 
+1kg tắc
+500gr. Ngò gai 
+500gr Lá mơ 
+Ngò rí 1kg
+Diếp cá 1kg
+Lá lốt cành đẹp 1kg
+— — —
+Ok"><td class=macol></td><td class=spcol>Diếp cá</td><td class=slcol>1</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Chủ Nhật Chủ Nhật 6:34sáng; Hoa Anh Dao · Chủ Nhật Chủ Nhật 10:59sáng" data-tim="K1 
+1kg tắc
+500gr. Ngò gai 
+500gr Lá mơ 
+Ngò rí 1kg
+Diếp cá 1kg
+Lá lốt cành đẹp 1kg
+— — —
+Ok"><td class=macol></td><td class=spcol>Lá lốt cành</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma">57.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Thiếu giá diếp cá trong bảng giá</td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 8:38sáng" data-tim="K1 
+2kg đậu rồng 49k"><td class=macol>K1 (Thứ Hai)<div class=ngayma>Thứ Hai</div></td><td class=spcol>Đậu rồng</td><td class=slcol>2 kg</td><td class=num>49.000</td><td class="num tongma">49.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:19sáng; Hoa Anh Dao · Thứ Hai Thứ Hai 9:19sáng" data-tim="K2 
+10kg lac xt đẹp 83k
+— — —
+Ok e"><td class=macol>K2<div class=ngayma>Thứ Hai</div></td><td class=spcol>Lạc tươi xt</td><td class=slcol>1 10kg</td><td class=num>83.000</td><td class="num tongma">83.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:36sáng" data-tim="K3 
+Sả 1kg
+Lá lốt cành 1kg 
+Tắc 1kg 
+Ngò gai 1kg 
+Tía tô 1kg"><td class=macol>K3<div class=ngayma>Thứ Hai</div></td><td class=spcol>Sả</td><td class=slcol>1 kg</td><td class=num>7.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:36sáng" data-tim="K3 
+Sả 1kg
+Lá lốt cành 1kg 
+Tắc 1kg 
+Ngò gai 1kg 
+Tía tô 1kg"><td class=macol></td><td class=spcol>Lá lốt cành</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:36sáng" data-tim="K3 
+Sả 1kg
+Lá lốt cành 1kg 
+Tắc 1kg 
+Ngò gai 1kg 
+Tía tô 1kg"><td class=macol></td><td class=spcol>Tắc</td><td class=slcol>1 kg</td><td class=num>21.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:36sáng" data-tim="K3 
+Sả 1kg
+Lá lốt cành 1kg 
+Tắc 1kg 
+Ngò gai 1kg 
+Tía tô 1kg"><td class=macol></td><td class=spcol>Ngò gai</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:36sáng" data-tim="K3 
+Sả 1kg
+Lá lốt cành 1kg 
+Tắc 1kg 
+Ngò gai 1kg 
+Tía tô 1kg"><td class=macol></td><td class=spcol>Tía tô</td><td class=slcol>1 kg</td><td class=num>11.000</td><td class="num tongma">63.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:45sáng; Hoa Anh Dao · Thứ Hai Thứ Hai 11:04sáng" data-tim="K4. 
+2kg  thiên lý
+1kg đậu rồng
+500gr diếp cá
+500gr rau má
+1kg húng quế
+— — —
+C hetnluon thien lý nhe"><td class=macol>K4<div class=ngayma>Thứ Hai</div></td><td class=spcol>Thiên lý</td><td class=slcol></td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:45sáng; Hoa Anh Dao · Thứ Hai Thứ Hai 11:04sáng" data-tim="K4. 
+2kg  thiên lý
+1kg đậu rồng
+500gr diếp cá
+500gr rau má
+1kg húng quế
+— — —
+C hetnluon thien lý nhe"><td class=macol></td><td class=spcol>Đậu rồng</td><td class=slcol>1</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:45sáng; Hoa Anh Dao · Thứ Hai Thứ Hai 11:04sáng" data-tim="K4. 
+2kg  thiên lý
+1kg đậu rồng
+500gr diếp cá
+500gr rau má
+1kg húng quế
+— — —
+C hetnluon thien lý nhe"><td class=macol></td><td class=spcol>Diếp cá</td><td class=slcol>0.5</td><td class=num>0</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:45sáng; Hoa Anh Dao · Thứ Hai Thứ Hai 11:04sáng" data-tim="K4. 
+2kg  thiên lý
+1kg đậu rồng
+500gr diếp cá
+500gr rau má
+1kg húng quế
+— — —
+C hetnluon thien lý nhe"><td class=macol></td><td class=spcol>Rau má</td><td class=slcol>0.5 kg</td><td class=num>6.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 9:45sáng; Hoa Anh Dao · Thứ Hai Thứ Hai 11:04sáng" data-tim="K4. 
+2kg  thiên lý
+1kg đậu rồng
+500gr diếp cá
+500gr rau má
+1kg húng quế
+— — —
+C hetnluon thien lý nhe"><td class=macol></td><td class=spcol>Húng quế</td><td class=slcol>1 kg</td><td class=num>11.000</td><td class="num tongma">17.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Thiếu giá lẻ đậu rồng và giá diếp cá</td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 11:46sáng; Hoa Anh Dao · Thứ Hai Thứ Hai 11:55sáng" data-tim="K5. 
+10kg lạc đẹp 83k
+— — —
+Ok e"><td class=macol>K5<div class=ngayma>Thứ Hai</div></td><td class=spcol>Lạc đẹp</td><td class=slcol>1 10kg</td><td class=num>83.000</td><td class="num tongma">83.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 15:12ch; Hoa Anh Dao · Thứ Hai Thứ Hai 15:12ch" data-tim="K6 
+Ngót-3kg
+Lá sung-1kg
+Lá giang-1kg
+Đinh lăng-1kg
+Ngò gai -2kg
+— — —
+Ok e"><td class=macol>K6<div class=ngayma>Thứ Hai</div></td><td class=spcol>Rau ngót</td><td class=slcol>3 kg</td><td class=num>39.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 15:12ch; Hoa Anh Dao · Thứ Hai Thứ Hai 15:12ch" data-tim="K6 
+Ngót-3kg
+Lá sung-1kg
+Lá giang-1kg
+Đinh lăng-1kg
+Ngò gai -2kg
+— — —
+Ok e"><td class=macol></td><td class=spcol>Lá sung</td><td class=slcol>1 kg</td><td class=num>12.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 15:12ch; Hoa Anh Dao · Thứ Hai Thứ Hai 15:12ch" data-tim="K6 
+Ngót-3kg
+Lá sung-1kg
+Lá giang-1kg
+Đinh lăng-1kg
+Ngò gai -2kg
+— — —
+Ok e"><td class=macol></td><td class=spcol>Lá giang</td><td class=slcol>1 kg</td><td class=num>13.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 15:12ch; Hoa Anh Dao · Thứ Hai Thứ Hai 15:12ch" data-tim="K6 
+Ngót-3kg
+Lá sung-1kg
+Lá giang-1kg
+Đinh lăng-1kg
+Ngò gai -2kg
+— — —
+Ok e"><td class=macol></td><td class=spcol>Đinh lăng</td><td class=slcol>1 kg</td><td class=num>13.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 15:12ch; Hoa Anh Dao · Thứ Hai Thứ Hai 15:12ch" data-tim="K6 
+Ngót-3kg
+Lá sung-1kg
+Lá giang-1kg
+Đinh lăng-1kg
+Ngò gai -2kg
+— — —
+Ok e"><td class=macol></td><td class=spcol>Ngò gai</td><td class=slcol>2 kg</td><td class=num>24.000</td><td class="num tongma">101.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 15:13ch; Hoa Anh Dao · Thứ Hai Thứ Hai 15:13ch" data-tim="K7. 
+5kg rau ngót 
+2kg hoa chuối
+— — —
+Ok"><td class=macol>K7<div class=ngayma>Thứ Hai</div></td><td class=spcol>Rau ngót</td><td class=slcol>5 kg</td><td class=num>65.000</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Việt Nam · Thứ Hai Thứ Hai 15:13ch; Hoa Anh Dao · Thứ Hai Thứ Hai 15:13ch" data-tim="K7. 
+5kg rau ngót 
+2kg hoa chuối
+— — —
+Ok"><td class=macol></td><td class=spcol>Hoa chuối</td><td class=slcol>2 kg</td><td class=num>24.000</td><td class="num tongma">89.000</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>542.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section><section id="p1" class="pg" data-nguon="Messenger FB" data-nhom="Hang nha Tina"><h1>Hàng nhà Tina</h1><p class=sub>Nhóm: Hang nha Tina (FB) · còn nợ <b style="color:#C00000">352.040 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st><col class=c-an></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th><th>Ảnh</th></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao · Thứ Hai Thứ Hai 12:27ch; Hoa Anh Dao · Thứ Hai Thứ Hai 12:27ch; Hệ thống / Ảnh · Thứ Hai N/A; Hệ thống / Ảnh · Thứ Hai N/A" data-tim="Rau tat ca x7 
 Thùng tru 2kg 1th 
 Tla x15
+— — —
 Hnay tla co 4 cay
 — — —
-Ảnh cân CAS 21.84 kg
+Ảnh cân: CAS 21.84 kg
 — — —
-Ảnh cân 23.88 kg"><td class=macol>TINA<div class=ngayma>21/10/2024</div></td><td class=spcol>Rau (Thùng 21.84kg)</td><td class=slcol>19.84 kg</td><td class=num>138.880</td><td class="num tongma"></td><td class=ttcol></td><td class="imgc imgrau" rowspan=3><img class=thumb data-im="0" onclick="event.stopPropagation();zoomu(this)"><img class=thumb data-im="1" onclick="event.stopPropagation();zoomu(this)"></td></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao · 21/10/2024 Thứ Hai 12:02ch; Hoa Anh Dao Hien · 21/10/2024 Thứ Hai 12:27ch; Hệ thống (OCR) · 21/10/2024 N/A; Hệ thống (OCR) · 21/10/2024 N/A" data-tim="Hàng nha tina
-— — —
-Rau tat ca x7 
+Ảnh cân: 23.88"><td class=macol>Tina<div class=ngayma>Thứ Hai</div></td><td class=spcol>Rau (Thùng 21.84kg)</td><td class=slcol>19.84 kg</td><td class=num>138.880</td><td class="num tongma"></td><td class=ttcol></td><td class="imgc imgrau" rowspan=4><img class=thumb data-im="0" onclick="event.stopPropagation();zoomu(this)"><img class=thumb data-im="1" onclick="event.stopPropagation();zoomu(this)"></td></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao · Thứ Hai Thứ Hai 12:27ch; Hoa Anh Dao · Thứ Hai Thứ Hai 12:27ch; Hệ thống / Ảnh · Thứ Hai N/A; Hệ thống / Ảnh · Thứ Hai N/A" data-tim="Rau tat ca x7 
 Thùng tru 2kg 1th 
 Tla x15
+— — —
 Hnay tla co 4 cay
 — — —
-Ảnh cân CAS 21.84 kg
+Ảnh cân: CAS 21.84 kg
 — — —
-Ảnh cân 23.88 kg"><td class=macol></td><td class=spcol>Thì là (Thùng 23.88kg)</td><td class=slcol>21.88 kg</td><td class=num>328.200</td><td class="num tongma">467.080</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Chưa rõ phân bổ chính xác thùng nào là rau (x7) và thùng nào là thì là (x15), đồng thời cần làm rõ ý nghĩa &#x27;tla co 4 cay&#x27; (thì là có 4 cây/thùng hay thế nào).</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>467.080</td><td></td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section>
+Ảnh cân: 23.88"><td class=macol></td><td class=spcol>Rau (Thùng 23.88kg)</td><td class=slcol>21.88 kg</td><td class=num>153.160</td><td class="num tongma"></td><td class=ttcol></td></tr><tr class=it onclick="ev(this)" data-ev="Hoa Anh Dao · Thứ Hai Thứ Hai 12:27ch; Hoa Anh Dao · Thứ Hai Thứ Hai 12:27ch; Hệ thống / Ảnh · Thứ Hai N/A; Hệ thống / Ảnh · Thứ Hai N/A" data-tim="Rau tat ca x7 
+Thùng tru 2kg 1th 
+Tla x15
+— — —
+Hnay tla co 4 cay
+— — —
+Ảnh cân: CAS 21.84 kg
+— — —
+Ảnh cân: 23.88"><td class=macol></td><td class=spcol>Thì là (Tla)</td><td class=slcol>4 cay</td><td class=num>60.000</td><td class="num tongma">352.040</td><td class=ttcol><span class=tt-no>● Chưa TT</span> <span class=tt-duyet>⚠ Cần duyệt</span></td></tr><tr class=duyetrow><td></td><td colspan=5>⚠ Cần duyệt: Cần xác nhận lại &#x27;4 cay&#x27; thì là là 4kg hay 4 cây, và hai thùng rau 21.84kg và 23.88kg đã bao gồm thì là chưa hay tính riêng.</td></tr><tr class=tongall><td colspan=4>TỔNG phải trả (won)</td><td class=num>352.040</td><td></td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc). Cột “Ảnh” = ảnh thật (thùng rau/phiếu cân) — bấm để phóng to.</div></section>
 <div class=foot>Sổ công nợ nhóm Rau (Kakao)</div>
 </div>
 <div id=lb onclick="this.classList.remove('on')"><span class=x>×</span><img id=lbi></div>
