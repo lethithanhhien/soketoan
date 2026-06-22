@@ -1,155 +1,24 @@
-<!doctype html><html lang=vi><head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
-<meta name="color-scheme" content="light">
-<title>Sổ công nợ — Rau Korea</title>
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sổ Rau — Kakao</title>
 <style>
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{color-scheme:light}
-body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#fff;color:#161616;font-size:15px}
-.wrap{max-width:560px;margin:0 auto;background:#fff;min-height:100vh}
-.gbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:11px 10px 4px;background:#fff;border-bottom:1px solid #eee}
-.gbar .glbl{font-size:12px;color:#888;margin-right:2px}
-.gbar .gt{font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid #1F6E43;color:#1F6E43;background:#fff;text-decoration:none}
-.gbar .gt.on{background:#1F6E43;color:#fff}
-.tabs{position:sticky;top:0;display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff;border-bottom:1px solid #e3e3e3;z-index:5}
-.dash{display:block}
-.tab{flex:0 0 auto;font-size:13px;padding:7px 13px;border-radius:999px;border:1px solid #d4d4d4;background:#fff;color:#555}
-.tab.on{background:#1F6E43;color:#fff;border-color:#1F6E43;font-weight:600}
-.mfilter{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px}
-.mf{font-size:12px;padding:5px 13px;border-radius:999px;border:1px solid #d4d4d4;background:#fff;color:#555;cursor:pointer}
-.mf.on{background:#1F6E43;color:#fff;border-color:#1F6E43;font-weight:600}
-.pg{display:none;padding:14px}.pg.on{display:block}
-h1{font-size:19px;margin:4px 0 2px;color:#1F6E43}.sub{margin:0 0 12px;color:#555;font-size:12px}
-.card{border:1px solid #cfcfcf;border-radius:10px;overflow:hidden;margin-bottom:12px}
-.ct{font-weight:600;font-size:14px;padding:9px 12px;color:#fff}
-.card.red .ct{background:#C00000}.card.grn .ct{background:#1F6E43}.card.blu .ct{background:#1F4E78}.card.teal .ct{background:#DB2777}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{padding:7px 10px;border:1px solid #cfcfcf;text-align:left}
-.det tr.it{cursor:pointer}.det tr.it:active td,.det tr.it:hover td{background:#eef6ea}
-.det tr.it td:first-child{color:#1155CC;font-weight:700}
-th{background:#ebeeea;font-size:11px;color:#3a3a3a;font-weight:700}
-.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#111}
-.cur{color:#5a5a5a;font-size:12px;text-align:center;width:42px}
-.tot td{font-weight:700;background:#edf0ec}
-.card.red .tot td{color:#C00000}.card.grn .tot td{color:#1F6E43}.card.blu .tot td{color:#1F4E78}.card.teal .tot td{color:#DB2777}
-.dcsub td{font-weight:700;background:#eaf0f6;color:#1F4E78;border-top:2px solid #b9c9dc}
-.dchead td{font-weight:700;background:#1F4E78;color:#fff;font-size:12px;letter-spacing:.3px}
-.card.grn .dchead td{background:#1F6E43}
-.card.grn .dcsub td{background:#eaf2ec;color:#1F6E43;border-top-color:#bcd4c4}
-.card.teal .dchead td{background:#DB2777}
-.card.teal .dcsub td{background:#fbe6f0;color:#DB2777;border-top-color:#f2c2d8}
-a{color:#1155CC;text-decoration:none;font-weight:600}
-.note{font-size:11px;color:#666;margin:6px 2px;font-style:italic}
-.blk{border:1px solid #cfcfcf;border-radius:10px;overflow:hidden;margin:12px 0}
-.bh{padding:9px 12px;font-size:13px;font-weight:600}
-.blk.ok .bh{background:#1F6E43;color:#fff}.blk.no .bh{background:#C00000;color:#fff}
-.blk.self .bh{background:#1F4E78;color:#fff}.blk.thu .bh{background:#DB2777;color:#fff}
-.bh .cgflag{color:#FFD56B}
-.paidbtn{display:none;margin-left:8px;font-size:11px;padding:3px 9px;border:0;border-radius:6px;background:#0a7d2c;color:#fff;cursor:pointer;font-weight:700;vertical-align:middle}
-.paidbtn.undo{background:#8a5a00}
-.paidbtn:disabled{opacity:.7;cursor:default}
-body.editing .paidbtn{display:inline-block}     /* nut "Đã thanh toán"/"Bỏ đánh dấu" CHI hien khi SUA (mat khau) */
-/* Nền XÁM + ⚠ HIỆN cho mọi người (sếp xem được). Chỉ GHI CHÚ chi tiết + nút duyệt là riêng tư (vào Sửa mới hiện). */
-.pendrow{background:#ececec}                        /* nền XÁM = cần soát (ai cũng thấy) */
-.pendrow.tinrow{background:#fff}                     /* dòng "đã trả" bằng chứng-tin: nền TRẮNG (chỉ đối chiếu, ko phải nghi sai) */
-.itsg{background:#ececec}                            /* dòng chat cần soát giá = nền XÁM (ai cũng thấy) */
-.pendrow td{border-top:1px solid #dadada}
-.pwarn{color:#777;font-weight:700}                 /* ⚠ ai cũng thấy */
-.tinw{color:#c87f00;font-weight:700;cursor:help}   /* ⚠ bang chung la TIN NHAN -> bam de copy doi chieu Zalo */
-.copytin{margin-top:8px;padding:7px 12px;border:1px solid #19a35a;background:#eafff2;color:#0b6b38;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600}
-.copytin:hover{background:#d6f7e4}
-.pnote{display:none;font-size:11px;color:#666;margin-top:3px;font-style:italic;line-height:1.45}
-.pacts{display:none;margin-top:6px}
-body.editing .pnote,body.editing .pacts{display:block}   /* ghi chú + nút duyệt: chỉ khi SỬA (mật khẩu) */
-body.editing .pendrow .pnm{outline:1px dashed #aaa;padding:0 3px;border-radius:3px}
-.papp{margin-right:8px;font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#1F6E43;color:#fff;cursor:pointer}
-.pdel{font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#C00000;color:#fff;cursor:pointer}
-.pendrow.appd{background:#fff}                      /* đã kiểm/sửa xong -> trắng */
-.pendrow.appd .papp{background:#0a7d2c}
-.pendrow.del{background:#f3d2d2;opacity:.65}
-.pendrow.del .pnm{text-decoration:line-through}
-.trunganh{background:#ededed}                       /* món CHAT trùng ảnh viết tay: xám nhạt */
-.nogia{color:#999;font-style:italic;font-weight:400}
-.cgflag{color:#B26A00;font-weight:700;font-size:12px}
-table.det td{font-size:13px}.det .qn{text-align:right;color:#1F4E78;font-style:italic}
-.det .dh th{background:#ebeeea;color:#3a3a3a;font-size:11px;font-weight:700;padding:5px 8px}
-.imgc{text-align:center;width:52px;padding:3px}
-.thumb{width:38px;height:38px;object-fit:cover;border:1px solid #ccc;border-radius:5px;cursor:zoom-in;vertical-align:middle}
-.det .qd.won .qn,.det .qd.won .num{color:#1F4E78;font-weight:700;font-style:normal}
-.ev{font-size:12px;color:#4a4a4a;padding:8px 12px;border-top:1px solid #dcdcdc;background:#f7f7f5}
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px}
-figure{margin:0;cursor:zoom-in}figure img{width:100%;border:1px solid #ddd;border-radius:6px;display:block}
-figcaption{font-size:10px;color:#999;margin-top:2px;line-height:1.2}
-#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;align-items:center;justify-content:center;flex-direction:column}
-#lb.on{display:flex}#lb img{max-width:100%;max-height:88vh;object-fit:contain}
-#lb .x{position:fixed;top:14px;right:18px;color:#fff;font-size:30px}
-#evp{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:60;align-items:center;justify-content:center;padding:22px}
-#evp.on{display:flex}
-.evbox{background:#fff;border-radius:12px;padding:18px 20px;max-width:430px;width:100%;line-height:1.5}
-.evbox .eb{margin-top:14px;padding:8px 18px;border:none;border-radius:8px;background:#1F6E43;color:#fff;font-size:14px;cursor:pointer}
-.foot{text-align:center;color:#bbb;font-size:11px;padding:18px}
-#editbar{margin-left:auto;display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-#editbar button{font-size:13px;padding:6px 13px;border:none;border-radius:999px;cursor:pointer;background:#1F6E43;color:#fff;font-weight:700}
-#editbar #esave button{margin-left:4px}
-#editbar .ecancel{background:#eee!important;color:#333!important}
-#editbar #emsg{font-size:11px;color:#666;width:100%;text-align:right}
-body.editing td.num{background:#fff7d6;outline:1px dashed #d4a017}
-body.editing td.num:focus{background:#fff;outline:2px solid #1F6E43}
-</style></head><body><div class=wrap>
-
-<div class=tabs></div>
-<section class="pg on" style="padding:30px 18px;text-align:center"><h1>Sổ công nợ — Rau Korea</h1><p class="sub" style="font-size:14px">Nhóm <b>Rau Korea</b> chưa có dữ liệu. Sổ sẽ hiện ở đây sau khi bắt đầu theo dõi nhóm này.</p></section>
-<div class=foot>Sổ công nợ nhóm Rau Korea</div>
-</div>
-<div id=lb onclick="this.classList.remove('on')"><span class=x>×</span><img id=lbi></div>
-<div id=evp onclick="this.classList.remove('on')"><div class=evbox onclick="event.stopPropagation()"><div id=evt></div><button class=eb onclick="document.getElementById('evp').classList.remove('on')">Đóng</button></div></div>
-<script>
-function go(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
- var el=document.getElementById(id);if(el)el.classList.add('on');
- document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
- var i=[...document.querySelectorAll('.tab')].find(t=>t.getAttribute('onclick').includes("'"+id+"'"));if(i)i.classList.add('on');
- window.scrollTo(0,0);}
-function zoomu(img){document.getElementById('lbi').src=img.src;document.getElementById('lb').classList.add('on');}
-function mfilter(btn,m){var s=btn.closest('section');
- s.querySelectorAll('.mf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
- s.querySelectorAll('.blk').forEach(e=>{if(!e.dataset.m)return;e.style.display=(m==='all'||e.dataset.m===m)?'':'none';});}
-function dcfilter(btn,m){var b=btn.closest('.dcbox');
- b.querySelectorAll('.mf').forEach(x=>x.classList.remove('on'));btn.classList.add('on');
- b.querySelectorAll('.dcr').forEach(function(r){r.style.display=(m!=='all'&&r.dataset.m===m)?'':'none';});
- var t=b.querySelector('.dctot');if(t)t.style.display=(m==='all')?'':'none';}
-function ev(tr){if(document.body.classList.contains('editing')){return;}   /* dang sua -> bam o de sua, KHONG popup */
- var d=(tr.dataset.ev||'');var tim=(tr.dataset.tim||'');
- if(!d.trim()&&!tim.trim()){return;}                                        /* khong co bang chung -> bo qua */
- var ngay=tr.cells[0].textContent.trim();
- var nm=tr.querySelector('.pnm');var ten=(nm?nm.textContent:tr.cells[1].textContent).replace('⚠','').trim();
- var b=document.getElementById('evt');b.innerHTML='';
- var h=document.createElement('div');h.style.cssText='font-weight:600;font-size:15px';h.textContent=ten+(ngay?'  ·  '+ngay:'');
- b.appendChild(h);
- if(d.trim()){
-  var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
-  var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
-  b.appendChild(l);b.appendChild(p);}
- if(tim.trim()){                                                            /* tim = nguyen van tin -> nut COPY + ⚠ doi chieu Zalo */
-  var l2=document.createElement('div');l2.style.cssText='color:#999;font-size:12px;margin:12px 0 3px';l2.textContent='Nội dung tin nhắn (bằng chứng):';
-  var q=document.createElement('div');q.style.cssText='color:#111;background:#f6f6f6;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;white-space:pre-wrap';q.textContent=tim;
-  var cb=document.createElement('button');cb.className='copytin';cb.textContent='📋 Copy tin — dán vào ô tìm kiếm Zalo';
-  cb.onclick=function(e){e.stopPropagation();var t=tim;
-   function ok(){cb.textContent='✓ Đã copy — mở Zalo, dán vào ô tìm kiếm để đối chiếu';}
-   function fb(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(_){}document.body.removeChild(ta);}
-   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb);}else{fb();}};
-  var note=document.createElement('div');note.style.cssText='color:#b26a00;font-size:12px;margin-top:6px';note.textContent='⚠ copy tin nhắn để đối chiếu lại trên Zalo (dán nội dung vào ô tìm kiếm).';
-  b.appendChild(l2);b.appendChild(q);b.appendChild(cb);b.appendChild(note);}
- var im=tr.querySelector('img.evthumb')||tr.querySelector('img.thumb');   // evthumb = anh chup TIN NHAN (mon trung anh viet tay)
- if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
- if(im){var lb=document.createElement('div');lb.style.cssText='color:#999;font-size:12px;margin:12px 0 4px';lb.textContent='Ảnh bằng chứng:';
-  var i2=document.createElement('img');i2.src=im.src;i2.style.cssText='display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;cursor:pointer';i2.title='Bấm để đóng';i2.onclick=function(e){document.getElementById('evp').classList.remove('on');};
-  b.appendChild(lb);b.appendChild(i2);}
- document.getElementById('evp').classList.add('on');}
-function _defm(g,fn){var bs=g.querySelectorAll('.mf');
- if(bs.length>=2){fn(bs[1],bs[1].textContent.trim());}      /* nut THANG MOI NHAT (ngay sau 'Tất cả') = thang hien tai */
- else if(bs.length){fn(bs[0],'all');}}
-document.querySelectorAll('.dcbox').forEach(function(b){_defm(b,dcfilter);});
-document.querySelectorAll('section .mfilter').forEach(function(mf){if(!mf.closest('.dcbox'))_defm(mf,mfilter);});
-</script>
-
-</body></html>
+:root{--bg:#0f1115;--card:#1a1d24;--line:#2a2f3a;--ink:#e8eaed;--sub:#9aa0aa;--acc:#34d399;--warn:#fbbf24;--cu:#f87171}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;padding:14px}
+h1{font-size:20px;margin:0 0 2px}.sub{color:var(--sub);font-size:13px;margin-bottom:14px}
+.dando{background:#1e2531;border:1px solid #2d4a5e;border-radius:12px;padding:12px 14px;margin:0 0 16px}
+.dando h2{font-size:15px;margin:0 0 8px;color:var(--warn)}.dando p{margin:3px 0;font-size:13.5px;color:#cdd3db;white-space:pre-wrap}
+.nhom{margin:0 0 22px}.nhom-ten{font-size:16px;font-weight:700;border-left:4px solid var(--acc);padding-left:10px;margin:0 0 4px}
+.nhom-meta{color:var(--sub);font-size:12.5px;margin:0 0 10px;padding-left:14px}
+.ctv{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 12px}
+.ctv-ten{font-weight:700;margin-bottom:6px}.lt{color:var(--sub);font-weight:400;font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{color:var(--sub);font-weight:600;text-align:left;border-bottom:1px solid var(--line);padding:4px 6px;font-size:12px}
+td{padding:4px 6px;border-bottom:1px solid #23272f}
+td.ma{color:var(--acc);font-weight:600;white-space:nowrap}td.sl{color:var(--sub);white-space:nowrap}
+td.tt,td.tm{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ft td{border-top:1px solid var(--line);border-bottom:none;color:var(--sub);font-weight:600}
+.ft.cu td{color:var(--cu)}.ft.tong td{color:var(--ink);font-size:15px;font-weight:800}
+.warn{color:var(--warn);font-size:12.5px;padding-left:14px;margin:2px 0}
+.empty{color:var(--sub);font-style:italic;padding-left:14px}
+footer{color:var(--sub);font-size:11.5px;text-align:center;margin-top:24px}
+</style></head><body><h1>🥬 Sổ Kế Toán Rau</h1><div class="sub">Cào lúc: 2026-06-22 15:52:25 · đơn vị mặc định: <b>won</b></div><div class="dando"><h2>★ Dặn dò từ chị Hiền (Thanh Hien 윤정)</h2><p>Chủ Nhật, 21 Tháng Sáu 2026</p><p>[Thanh Hien 윤정] [22:40] Ok e</p><p>[Hoàng Anh] [22:41] mai chị rảnh lúc nào ah , em alo trao đổi để nắm bắt công việc ah</p><p>[Thanh Hien 윤정] [22:43] Ôi giời em ơi công việc dễ lắm em ạ chị nói như thế em không hiểu à</p><p>[Thanh Hien 윤정] [22:44] Photo</p><p>[Thanh Hien 윤정] [22:44] Em ơi chị nói nha em cứ hình dung ra ấy là nhà chị 1 tuần sẽ phải chốt sổ 1 lần và làm từ bắt đầu Chủ nhật cho đến thứ 6</p><p>[Thanh Hien 윤정] [22:45] Cuối tuần là em phải chốt đơn ctv của các nhóm</p><p>[Thanh Hien 윤정] [22:45] Và nhóm nào ấy mà người ta chưa chuyển khoản tiền cho chị ấy thì là em sẽ phải cộng đơn cũ vào còn người ta chuyển khoản cho chị rồi thì em cũng nhìn thấy là người ta chuyển ở trong đấy rồi ấy họ chuyển khoản thì họ sẽ gửi ở trong nhóm để tất cả mọi người đều nhìn thấy là người ta đã chuyển rồi thì là em không cần cộng nữa và nếu người ta chuyển bao nhiêu mà chưa đủ thì là em lại cộng lại đến tuần sau</p><p>[Hoàng Anh] [22:46] ok chị</p><p>Thứ Hai, 22 Tháng Sáu 2026</p><p>[Hoàng Anh] [12:54] chị ơi chị nhắn gì cho em chị nhắn trên kakao giúp em nhé vì trên fb này em bị spam tin nhắn nhiều lắm nên nhiều lúc bị trôi tin sẽ ko để ý đc ạ.</p><p>[Hoàng Anh] [13:18] chị tạo nhóm Hàng nhà Tina trên kakao hộ em nhé em tạo nó bắt xác minh bằng số đt hàn nên em ko tạo đc ạ</p></div><div class="nhom"><div class="nhom-ten">DUNG CHOT DON (21/6)</div><div class="nhom-meta">CTV: — · bên bán: — · 2 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><div class="nhom"><div class="nhom-ten">Nhom trân ctv</div><div class="nhom-meta">CTV: Ngọc Trân · bên bán: Co lee, Hằng Nga · 10 tin</div><div class="ctv"><div class="ctv-ten">👤 Ngọc Trân <span class="lt">(won)</span></div><table><thead><tr><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th></tr></thead><tbody><tr><td class="ma">D3</td><td class="sp">cá diêu hồng</td><td class="sl">3 kg</td><td class="tt">39.000</td><td class="tm">39.000</td></tr><tr class="ft"><td colspan="4">Tổng tuần</td><td class="tm">39.000</td></tr><tr class="ft tong"><td colspan="4">TỔNG phải trả</td><td class="tm">39.000 won</td></tr></tbody></table></div><div class="warn">⚠ Co 2 ẢNH chưa đọc (cân/bảng giá/biên lai) — cần OCR ở tầng Gemini</div></div><div class="nhom"><div class="nhom-ten">Chot đon e thanh</div><div class="nhom-meta">CTV: thanh · bên bán: Thanh Hien 윤정 · 5 tin</div><div class="ctv"><div class="ctv-ten">👤 thanh <span class="lt">(won)</span></div><table><thead><tr><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th></tr></thead><tbody><tr><td class="ma">(khong ma)</td><td class="sp">la dua</td><td class="sl">1 kg</td><td class="tt">12.000</td><td class="tm">12.000</td></tr><tr class="ft"><td colspan="4">Tổng tuần</td><td class="tm">12.000</td></tr><tr class="ft tong"><td colspan="4">TỔNG phải trả</td><td class="tm">12.000 won</td></tr></tbody></table></div></div><div class="nhom"><div class="nhom-ten">Đơn hàng 5206</div><div class="nhom-meta">CTV: — · bên bán: Co lee, Thanh Hien 윤정 · 10 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><div class="nhom"><div class="nhom-ten">Hằng Nga</div><div class="nhom-meta">CTV: — · bên bán: Hằng Nga · 10 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><div class="nhom"><div class="nhom-ten">Chốt đơn thuy tran</div><div class="nhom-meta">CTV: Thuy tran · bên bán: Thanh Hien 윤정 · 10 tin</div><div class="ctv"><div class="ctv-ten">👤 Thuy tran <span class="lt">(won)</span></div><table><thead><tr><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th></tr></thead><tbody><tr><td class="ma">K5</td><td class="sp">dau rong</td><td class="sl">5 kg</td><td class="tt">102.000</td><td class="tm">102.000</td></tr><tr><td class="ma">K6</td><td class="sp">dau rong</td><td class="sl">5 kg</td><td class="tt">102.000</td><td class="tm"></td></tr><tr><td class="ma"></td><td class="sp">chuoi</td><td class="sl">5 kg</td><td class="tt">52.000</td><td class="tm">154.000</td></tr><tr class="ft"><td colspan="4">Tổng tuần</td><td class="tm">256.000</td></tr><tr class="ft tong"><td colspan="4">TỔNG phải trả</td><td class="tm">256.000 won</td></tr></tbody></table></div><div class="warn">⚠ Co 2 ẢNH chưa đọc (cân/bảng giá/biên lai) — cần OCR ở tầng Gemini</div></div><div class="nhom"><div class="nhom-ten">Đặt hàng C Thanh Hien</div><div class="nhom-meta">CTV: — · bên bán: Co lee · 2 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><div class="nhom"><div class="nhom-ten">nhóm diep</div><div class="nhom-meta">CTV: — · bên bán: Co lee · 10 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div><div class="warn">⚠ Co 2 ẢNH chưa đọc (cân/bảng giá/biên lai) — cần OCR ở tầng Gemini</div></div><div class="nhom"><div class="nhom-ten">🍎🍎 Gửi Đơn Hoa quả</div><div class="nhom-meta">CTV: 은하, Su su · bên bán: Co lee · 7 tin</div><div class="ctv"><div class="ctv-ten">👤 은하 <span class="lt">(won)</span></div><table><thead><tr><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th></tr></thead><tbody><tr><td class="ma">Đ2</td><td class="sp">lạc tươi</td><td class="sl">2 kg</td><td class="tt">22.000</td><td class="tm">22.000</td></tr><tr class="ft"><td colspan="4">Tổng tuần</td><td class="tm">22.000</td></tr><tr class="ft tong"><td colspan="4">TỔNG phải trả</td><td class="tm">22.000 won</td></tr></tbody></table></div><div class="ctv"><div class="ctv-ten">👤 Su su <span class="lt">(won)</span></div><table><thead><tr><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th></tr></thead><tbody><tr><td class="ma">D3</td><td class="sp">rau nhút</td><td class="sl">1 kg</td><td class="tt">12.000</td><td class="tm">12.000</td></tr><tr class="ft"><td colspan="4">Tổng tuần</td><td class="tm">12.000</td></tr><tr class="ft tong"><td colspan="4">TỔNG phải trả</td><td class="tm">12.000 won</td></tr></tbody></table></div></div><div class="nhom"><div class="nhom-ten">Rau tp han viet</div><div class="nhom-meta">CTV: — · bên bán: Thanh Hien 윤정 · 5 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div><div class="warn">⚠ Co 1 ẢNH chưa đọc (cân/bảng giá/biên lai) — cần OCR ở tầng Gemini</div></div><div class="nhom"><div class="nhom-ten">Nhom rau vn</div><div class="nhom-meta">CTV: 비엣트 🇻🇳🇰🇷 · bên bán: Thanh Hien 윤정 · 10 tin</div><div class="ctv"><div class="ctv-ten">👤 비엣트 🇻🇳🇰🇷 <span class="lt">(won)</span></div><table><thead><tr><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th></tr></thead><tbody><tr><td class="ma">(khong ma)</td><td class="sp">rau má hàn</td><td class="sl">1 kg</td><td class="tt">12.000</td><td class="tm"></td></tr><tr><td class="ma"></td><td class="sp">lá lót vn</td><td class="sl">2 kg</td><td class="tt">26.000</td><td class="tm"></td></tr><tr><td class="ma"></td><td class="sp">-4675-2799 MAN QUAN</td><td class="sl">10 kg</td><td class="tt">0</td><td class="tm">38.000</td></tr><tr class="ft"><td colspan="4">Tổng tuần</td><td class="tm">38.000</td></tr><tr class="ft tong"><td colspan="4">TỔNG phải trả</td><td class="tm">38.000 won</td></tr></tbody></table></div></div><div class="nhom"><div class="nhom-ten">hân</div><div class="nhom-meta">CTV: — · bên bán: Co lee · 4 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><div class="nhom"><div class="nhom-ten">Nhom linh ruby</div><div class="nhom-meta">CTV: — · bên bán: — · 1 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><div class="nhom"><div class="nhom-ten">nhim 제인</div><div class="nhom-meta">CTV: — · bên bán: — · 1 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><div class="nhom"><div class="nhom-ten">may mắn đến với mình, Thuỷ, Hằng Nga, may mắn và binh an, Co lee, ...</div><div class="nhom-meta">CTV: — · bên bán: — · 1 tin</div><div class="empty">— Chưa có đơn nào trong tuần —</div></div><footer>Sổ Rau (Kakao) · tách riêng sổ Ốc (Zalo) · tiền WON</footer></body></html>
