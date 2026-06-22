@@ -55,7 +55,7 @@ body.editing .paidbtn{display:inline-block}     /* nut "Đã thanh toán"/"Bỏ 
 .itsg{background:#ececec}                            /* dòng chat cần soát giá = nền XÁM (ai cũng thấy) */
 .pendrow td{border-top:1px solid #dadada}
 .pwarn{color:#777;font-weight:700}                 /* ⚠ ai cũng thấy */
-.tinw{color:#c87f00;font-weight:700;cursor:help}   /* ⚠ bang chung la TIN NHAN -> bam de copy doi chieu Kakao */
+.tinw{color:#c87f00;font-weight:700;cursor:help}   /* ⚠ bang chung la TIN NHAN -> bam de copy doi chieu Zalo */
 .copytin{margin-top:8px;padding:7px 12px;border:1px solid #19a35a;background:#eafff2;color:#0b6b38;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600}
 .copytin:hover{background:#d6f7e4}
 .pnote{display:none;font-size:11px;color:#666;margin-top:3px;font-style:italic;line-height:1.45}
@@ -191,15 +191,15 @@ function ev(tr){if(document.body.classList.contains('editing')){return;}   /* da
   var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
   var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
   b.appendChild(l);b.appendChild(p);}
- if(tim.trim()){                                                            /* tim = nguyen van tin -> nut COPY + ⚠ doi chieu Kakao */
+ if(tim.trim()){                                                            /* tim = nguyen van tin -> nut COPY + ⚠ doi chieu Zalo */
   var l2=document.createElement('div');l2.style.cssText='color:#999;font-size:12px;margin:12px 0 3px';l2.textContent='Nội dung tin nhắn (bằng chứng):';
   var q=document.createElement('div');q.style.cssText='color:#111;background:#f6f6f6;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;white-space:pre-wrap';q.textContent=tim;
-  var cb=document.createElement('button');cb.className='copytin';cb.textContent='📋 Copy tin — dán vào ô tìm kiếm Kakao';
+  var cb=document.createElement('button');cb.className='copytin';cb.textContent='📋 Copy tin — dán vào ô tìm kiếm Zalo';
   cb.onclick=function(e){e.stopPropagation();var t=tim;
-   function ok(){cb.textContent='✓ Đã copy — mở Kakao, dán vào ô tìm kiếm để đối chiếu';}
+   function ok(){cb.textContent='✓ Đã copy — mở Zalo, dán vào ô tìm kiếm để đối chiếu';}
    function fb(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(_){}document.body.removeChild(ta);}
    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb);}else{fb();}};
-  var note=document.createElement('div');note.style.cssText='color:#b26a00;font-size:12px;margin-top:6px';note.textContent='⚠ copy tin nhắn để đối chiếu lại trên Kakao (dán nội dung vào ô tìm kiếm).';
+  var note=document.createElement('div');note.style.cssText='color:#b26a00;font-size:12px;margin-top:6px';note.textContent='⚠ copy tin nhắn để đối chiếu lại trên Zalo (dán nội dung vào ô tìm kiếm).';
   b.appendChild(l2);b.appendChild(q);b.appendChild(cb);b.appendChild(note);}
  var im=tr.querySelector('img.evthumb')||tr.querySelector('img.thumb');   // evthumb = anh chup TIN NHAN (mon trung anh viet tay)
  if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
