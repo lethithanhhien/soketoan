@@ -1,0 +1,233 @@
+<!doctype html><html lang=vi><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="color-scheme" content="light">
+<title>Sổ công nợ — Rau (Kakao)</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{color-scheme:light}
+body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#fff;color:#161616;font-size:15px}
+.wrap{max-width:560px;margin:0 auto;background:#fff;min-height:100vh}
+.gbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:11px 10px 4px;background:#fff;border-bottom:1px solid #eee}
+.gbar .glbl{font-size:12px;color:#888;margin-right:2px}
+.gbar .gt{font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid #1F6E43;color:#1F6E43;background:#fff;text-decoration:none}
+.gbar .gt.on{background:#1F6E43;color:#fff}
+.tabs{position:sticky;top:0;display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff;border-bottom:1px solid #e3e3e3;z-index:5}
+.dash{display:block}
+.tab{flex:0 0 auto;font-size:13px;padding:7px 13px;border-radius:999px;border:1px solid #d4d4d4;background:#fff;color:#555}
+.tab.on{background:#1F6E43;color:#fff;border-color:#1F6E43;font-weight:600}
+.mfilter{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px}
+.mf{font-size:12px;padding:5px 13px;border-radius:999px;border:1px solid #d4d4d4;background:#fff;color:#555;cursor:pointer}
+.mf.on{background:#1F6E43;color:#fff;border-color:#1F6E43;font-weight:600}
+.pg{display:none;padding:14px}.pg.on{display:block}
+h1{font-size:19px;margin:4px 0 2px;color:#1F6E43}.sub{margin:0 0 12px;color:#555;font-size:12px}
+.card{border:1px solid #cfcfcf;border-radius:10px;overflow:hidden;margin-bottom:12px}
+.ct{font-weight:600;font-size:14px;padding:9px 12px;color:#fff}
+.card.red .ct{background:#C00000}.card.grn .ct{background:#1F6E43}.card.blu .ct{background:#1F4E78}.card.teal .ct{background:#DB2777}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:7px 10px;border:1px solid #cfcfcf;text-align:left}
+.det tr.it{cursor:pointer}.det tr.it:active td,.det tr.it:hover td{background:#eef6ea}
+.det tr.it td:first-child{color:#1155CC;font-weight:700}
+th{background:#ebeeea;font-size:11px;color:#3a3a3a;font-weight:700}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#111}
+.cur{color:#5a5a5a;font-size:12px;text-align:center;width:42px}
+.tot td{font-weight:700;background:#edf0ec}
+.card.red .tot td{color:#C00000}.card.grn .tot td{color:#1F6E43}.card.blu .tot td{color:#1F4E78}.card.teal .tot td{color:#DB2777}
+.dcsub td{font-weight:700;background:#eaf0f6;color:#1F4E78;border-top:2px solid #b9c9dc}
+.dchead td{font-weight:700;background:#1F4E78;color:#fff;font-size:12px;letter-spacing:.3px}
+.card.grn .dchead td{background:#1F6E43}
+.card.grn .dcsub td{background:#eaf2ec;color:#1F6E43;border-top-color:#bcd4c4}
+.card.teal .dchead td{background:#DB2777}
+.card.teal .dcsub td{background:#fbe6f0;color:#DB2777;border-top-color:#f2c2d8}
+a{color:#1155CC;text-decoration:none;font-weight:600}
+.note{font-size:11px;color:#666;margin:6px 2px;font-style:italic}
+.blk{border:1px solid #cfcfcf;border-radius:10px;overflow:hidden;margin:12px 0}
+.bh{padding:9px 12px;font-size:13px;font-weight:600}
+.blk.ok .bh{background:#1F6E43;color:#fff}.blk.no .bh{background:#C00000;color:#fff}
+.blk.self .bh{background:#1F4E78;color:#fff}.blk.thu .bh{background:#DB2777;color:#fff}
+.bh .cgflag{color:#FFD56B}
+.paidbtn{display:none;margin-left:8px;font-size:11px;padding:3px 9px;border:0;border-radius:6px;background:#0a7d2c;color:#fff;cursor:pointer;font-weight:700;vertical-align:middle}
+.paidbtn.undo{background:#8a5a00}
+.paidbtn:disabled{opacity:.7;cursor:default}
+body.editing .paidbtn{display:inline-block}     /* nut "Đã thanh toán"/"Bỏ đánh dấu" CHI hien khi SUA (mat khau) */
+/* Nền XÁM + ⚠ HIỆN cho mọi người (sếp xem được). Chỉ GHI CHÚ chi tiết + nút duyệt là riêng tư (vào Sửa mới hiện). */
+.pendrow{background:#ececec}                        /* nền XÁM = cần soát (ai cũng thấy) */
+.pendrow.tinrow{background:#fff}                     /* dòng "đã trả" bằng chứng-tin: nền TRẮNG (chỉ đối chiếu, ko phải nghi sai) */
+.itsg{background:#ececec}                            /* dòng chat cần soát giá = nền XÁM (ai cũng thấy) */
+.pendrow td{border-top:1px solid #dadada}
+.pwarn{color:#777;font-weight:700}                 /* ⚠ ai cũng thấy */
+.tinw{color:#c87f00;font-weight:700;cursor:help}   /* ⚠ bang chung la TIN NHAN -> bam de copy doi chieu Zalo */
+.copytin{margin-top:8px;padding:7px 12px;border:1px solid #19a35a;background:#eafff2;color:#0b6b38;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600}
+.copytin:hover{background:#d6f7e4}
+.pnote{display:none;font-size:11px;color:#666;margin-top:3px;font-style:italic;line-height:1.45}
+.pacts{display:none;margin-top:6px}
+body.editing .pnote,body.editing .pacts{display:block}   /* ghi chú + nút duyệt: chỉ khi SỬA (mật khẩu) */
+body.editing .pendrow .pnm{outline:1px dashed #aaa;padding:0 3px;border-radius:3px}
+.papp{margin-right:8px;font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#1F6E43;color:#fff;cursor:pointer}
+.pdel{font-size:12px;padding:4px 11px;border:0;border-radius:6px;background:#C00000;color:#fff;cursor:pointer}
+.pendrow.appd{background:#fff}                      /* đã kiểm/sửa xong -> trắng */
+.pendrow.appd .papp{background:#0a7d2c}
+.pendrow.del{background:#f3d2d2;opacity:.65}
+.pendrow.del .pnm{text-decoration:line-through}
+.trunganh{background:#ededed}                       /* món CHAT trùng ảnh viết tay: xám nhạt */
+.nogia{color:#999;font-style:italic;font-weight:400}
+.cgflag{color:#B26A00;font-weight:700;font-size:12px}
+table.det td{font-size:13px}.det .qn{text-align:right;color:#1F4E78;font-style:italic}
+.det .dh th{background:#ebeeea;color:#3a3a3a;font-size:11px;font-weight:700;padding:5px 8px}
+.imgc{text-align:center;width:52px;padding:3px}
+.thumb{width:38px;height:38px;object-fit:cover;border:1px solid #ccc;border-radius:5px;cursor:zoom-in;vertical-align:middle}
+.det .qd.won .qn,.det .qd.won .num{color:#1F4E78;font-weight:700;font-style:normal}
+.ev{font-size:12px;color:#4a4a4a;padding:8px 12px;border-top:1px solid #dcdcdc;background:#f7f7f5}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px}
+figure{margin:0;cursor:zoom-in}figure img{width:100%;border:1px solid #ddd;border-radius:6px;display:block}
+figcaption{font-size:10px;color:#999;margin-top:2px;line-height:1.2}
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;align-items:center;justify-content:center;flex-direction:column}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:88vh;object-fit:contain}
+#lb .x{position:fixed;top:14px;right:18px;color:#fff;font-size:30px}
+#evp{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:60;align-items:center;justify-content:center;padding:22px}
+#evp.on{display:flex}
+.evbox{background:#fff;border-radius:12px;padding:18px 20px;max-width:430px;width:100%;line-height:1.5}
+.evbox .eb{margin-top:14px;padding:8px 18px;border:none;border-radius:8px;background:#1F6E43;color:#fff;font-size:14px;cursor:pointer}
+.foot{text-align:center;color:#bbb;font-size:11px;padding:18px}
+#editbar{margin-left:auto;display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+#editbar button{font-size:13px;padding:6px 13px;border:none;border-radius:999px;cursor:pointer;background:#1F6E43;color:#fff;font-weight:700}
+#editbar #esave button{margin-left:4px}
+#editbar .ecancel{background:#eee!important;color:#333!important}
+#editbar #emsg{font-size:11px;color:#666;width:100%;text-align:right}
+body.editing td.num{background:#fff7d6;outline:1px dashed #d4a017}
+body.editing td.num:focus{background:#fff;outline:2px solid #1F6E43}
+</style><style>.giaobox{background:#eef4fb;border:1px solid #d3e2f2;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:13px;color:#1F4E78;line-height:1.5}.evhint{font-size:11px;color:#888;font-style:italic;margin:6px 2px}.ctvlink{color:#1155CC;font-weight:700;cursor:pointer}.card .it{cursor:pointer}.card .it:hover td{background:#eef6ea}.det th,.det td{text-align:center;vertical-align:middle}.det td.num,.det td.tongma{white-space:nowrap;font-variant-numeric:tabular-nums}.det td.tongma{font-weight:700;color:#111}.det td.macol{font-weight:700;color:#1F6E43}.det tr.giaorow td,.det tr.duyetrow td{text-align:left}.ngayma{font-size:10px;color:#8a8f98;font-weight:400;margin-top:2px}.ngayit{font-size:10px;color:#1F6E43;font-weight:600;margin-top:2px}.tt-no{color:#C00000;font-weight:700}.tt-ok{color:#1F6E43;font-weight:700}.tt-huy{color:#888;font-weight:700;text-decoration:line-through}.tt-duyet{color:#B26A00;font-weight:700;font-size:11px}.det tr.duyetrow td{background:#fff7e6;color:#B26A00;font-size:12px}.det tr.giaorow td{background:#eef4fb;color:#1F4E78;font-size:12px}.det tr.curow td{background:#fbeaea;color:#C00000;font-weight:700}.det tr.tongall td{background:#fde7e7;color:#C00000;font-weight:800;font-size:15px}.det td.imgc{padding:3px;text-align:center;vertical-align:middle}.det td.imgc img.thumb{width:46px;height:46px;display:block;margin:2px auto;border-radius:5px;border:1px solid #cdd7e0;cursor:zoom-in;object-fit:cover}.rauduyet{display:none;margin-left:10px;padding:3px 12px;border:none;border-radius:7px;background:#1F6E43;color:#fff;cursor:pointer;font-weight:700;font-size:12px}body.editing .rauduyet{display:inline-block}body.editing .det td.num[data-dk]{background:#fff7d6;outline:1px dashed #d4a017;cursor:text}.det tr.duyetrow.appd{opacity:.5}#editbar{font-size:13px;white-space:nowrap}#editbar button{margin-left:6px;padding:4px 12px;border:none;border-radius:7px;cursor:pointer}#esave button{background:#1F6E43;color:#fff;font-weight:700}#editbar .ecancel{background:#999;color:#fff}#emsg{margin-left:10px;color:#1F4E78;font-weight:600}</style><script>window.addEventListener('DOMContentLoaded',function(){function inf(){var a=document.querySelector('section.pg.on');return {ng:(a&&a.dataset.nguon)||'Kakao / Messenger FB',nh:(a&&a.dataset.nhom)||''};}var _evOld=window.ev; if(typeof _evOld!=='function')return;window.ev=function(tr){_evOld(tr);var cb=document.querySelector('#evt .copytin'); if(!cb)return;var f=inf();var lbl=f.nh?('nhóm \u201C'+f.nh+'\u201D trên '+f.ng):f.ng;cb.textContent='\uD83D\uDCCB Copy tin — tìm '+lbl;var nt=cb.nextElementSibling;if(nt)nt.textContent='\u26A0 Mở '+f.ng+', vào '+(f.nh?('nhóm \u201C'+f.nh+'\u201D'):'nhóm')+' dán nội dung vào ô tìm kiếm để tìm tin gốc.';var t=(tr&&tr.getAttribute('data-tim'))||'';cb.onclick=function(e){e.stopPropagation();function ok(){cb.textContent='\u2713 Đã copy — mở '+f.ng+' tìm '+lbl+', dán vào ô tìm kiếm';}function fbk(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(_){}document.body.removeChild(ta);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fbk);}else{fbk();}};};});</script><style>.wkbar{position:sticky;top:0;z-index:60;background:#1F4E78;color:#fff;padding:7px 10px;font-size:13px;font-weight:600;display:flex;flex-wrap:wrap;align-items:center;gap:5px}.wkbar .wknav{color:#cfe0f5;text-decoration:none;padding:3px 9px;border-radius:7px;white-space:nowrap}.wkbar .wknav.on{background:#fff;color:#1F4E78}.wkbar .wkdong{color:#ffd86b;font-size:11px}</style></head><body><div class=wkbar><span>📅 Tuần:</span><a href="index.html" class="wknav">📒 Tất cả</a><a href="tuan_2026-06-21.html" class="wknav">CN 21/06 → T7 27/06</a><a href="tuan_2026-06-28.html" class="wknav">CN 28/06 → T7 04/07</a><a href="tuan_khong_ngay.html" class="wknav on">khong_ngay</a></div><div class=wrap>
+
+<div class=tabs><button class="tab on" onclick="go('__dash')">Tổng quan</button><button class="tab" onclick="go('p0')">thuy tran</button><button class="tab" onclick="go('p1')">Rau tp han viet</button><button class="tab" onclick="go('p2')">Ngọc Diệp</button><button class="tab" onclick="go('p3')">Dung</button><button class="tab" onclick="go('p4')">🍎🍎 Gửi Đơn Hoa quả</button><button class="tab" onclick="go('p5')">비엣트 🇻🇳🇰🇷</button><button class="tab" onclick="go('p6')">thanh</button><button class="tab" onclick="go('p7')">Đơn hàng 5206</button><button class="tab" onclick="go('p8')">Dung</button><button class="tab" onclick="go('p9')">Ngọc Trân</button><button class="tab" onclick="go('p10')">Sỉ hàng Công ty</button><button class="tab" onclick="go('p11')">PHƯƠNG LINH</button><button class="tab" onclick="go('p12')">Trang Trang</button><button class="tab" onclick="go('p13')">Trần Gia Hân 2</button><button class="tab" onclick="go('p14')">Việt Nam</button><button class="tab" onclick="go('p15')">Tina</button></div>
+<section id="__dash" class="pg on"><h1>Sổ công nợ — Rau (Kakao + Facebook)</h1><p class=sub>Cập nhật  · CTV lấy hàng → còn nợ chị Hiền</p><div class="card red"><div class=ct>CỘNG TÁC VIÊN CÒN NỢ CHỊ HIỀN</div><table><tr><th>Cộng tác viên</th><th>Nhóm</th><th>Tình trạng</th><th class=num>Còn nợ (won)</th></tr><tr class=it onclick="go('p0')"><td><a class=ctvlink>thuy tran ›</a></td><td>Chốt đơn thuy tran</td><td>1 đơn chưa trả</td><td class=num>1.243.000</td></tr><tr class=it onclick="go('p1')"><td><a class=ctvlink>Rau tp han viet ›</a></td><td>Rau tp han viet</td><td>đã xong</td><td class=num>624.000</td></tr><tr class=it onclick="go('p2')"><td><a class=ctvlink>Ngọc Diệp ›</a></td><td>nhóm diep</td><td>đã xong</td><td class=num>602.000</td></tr><tr class=it onclick="go('p3')"><td><a class=ctvlink>Dung ›</a></td><td>DUNG CHOT DON (28/6)</td><td>đã xong</td><td class=num>67.000</td></tr><tr class=it onclick="go('p4')"><td><a class=ctvlink>🍎🍎 Gửi Đơn Hoa quả ›</a></td><td>🍎🍎 Gửi Đơn Hoa quả</td><td>đã xong</td><td class=num>260.000</td></tr><tr class=it onclick="go('p5')"><td><a class=ctvlink>비엣트 🇻🇳🇰🇷 ›</a></td><td>Nhom rau vn</td><td>đã xong</td><td class=num>229.000</td></tr><tr class=it onclick="go('p6')"><td><a class=ctvlink>thanh ›</a></td><td>Chot đon e thanh</td><td>đã xong</td><td class=num>251.000</td></tr><tr class=it onclick="go('p7')"><td><a class=ctvlink>Đơn hàng 5206 ›</a></td><td>Đơn hàng 5206</td><td>đã xong</td><td class=num>137.000</td></tr><tr class=it onclick="go('p8')"><td><a class=ctvlink>Dung ›</a></td><td>DUNG CHOT DON (21/6)</td><td>đã xong</td><td class=num>259.000</td></tr><tr class=it onclick="go('p9')"><td><a class=ctvlink>Ngọc Trân ›</a></td><td>Nhom trân ctv</td><td>đã xong</td><td class=num>58.000</td></tr><tr class=it onclick="go('p10')"><td><a class=ctvlink>Sỉ hàng Công ty ›</a></td><td>Đặt hàng C Thanh Hien</td><td>đã xong</td><td class=num>48.000</td></tr><tr class=it onclick="go('p11')"><td><a class=ctvlink>PHƯƠNG LINH ›</a></td><td>Nhom linh ruby</td><td>đã xong</td><td class=num>72.000</td></tr><tr class=it onclick="go('p12')"><td><a class=ctvlink>Trang Trang ›</a></td><td>nhim 제인</td><td>đã xong</td><td class=num>320.000</td></tr><tr class=it onclick="go('p13')"><td><a class=ctvlink>Trần Gia Hân 2 ›</a></td><td>hân</td><td>đã xong</td><td class=num>237.000</td></tr><tr class=it onclick="go('p14')"><td><a class=ctvlink>Việt Nam ›</a></td><td>Nhóm rau vn (FB)</td><td>đã xong</td><td class=num>1.159.000</td></tr><tr class=it onclick="go('p15')"><td><a class=ctvlink>Tina ›</a></td><td>Hàng nhà Tina (FB)</td><td>đã xong</td><td class=num>884.000</td></tr><tr class=tot><td colspan=3>TỔNG CTV CÒN NỢ</td><td class=num>6.450.000</td></tr></table></div><p class=note>Bấm tên cộng tác viên để xem chi tiết từng đơn + ghi chú rõ ràng, chi tiết.</p></section><section id="p0" class="pg" data-nguon="Kakao" data-nhom="Chốt đơn thuy tran"><h1>thuy tran</h1><p class=sub>Nhóm: Chốt đơn thuy tran · còn nợ <b style="color:#C00000">1.243.000 won</b></p><div class=detw><table class=det><colgroup><col class=c-ma><col class=c-sp><col class=c-sl><col class=c-tt><col class=c-tg><col class=c-st></colgroup><tr class=dh><th>Mã</th><th>Tên SP</th><th>SL</th><th>Thành tiền</th><th>Tổng</th><th>Tình trạng</th></tr><tr data-dk="chotdonthuytran|thuytran|K5"><td class=macol>K5</td><td class=spcol>—</td><td class=slcol></td><td class="num" data-dk="chotdonthuytran|thuytran|K5" data-ten="—" data-orig="0">0</td><td class="num tongma">0</td><td class=ttcol><span class=tt-no>● Chưa TT</span></td></tr><tr class=duyetrow data-dk="chotdonthuytran|thuytran|K5"><td></td><td colspan=5>⚠ Cần duyệt: ⚠ Đơn K5 có trong tin (có địa chỉ/SĐT giao hàng) nhưng đọc CHƯA được — cần kiểm/nhập tay.<button class=rauduyet onclick="rauDuyet(this)">✓ Đúng (duyệt)</button></td></tr><tr class=tot><td colspan=4>Tổng tuần này</td><td class=num>0</td><td></td></tr><tr class=curow><td colspan=4>cũ (nợ tuần trước)</td><td class=num>1.243.000</td><td></td></tr><tr class=tongall><td colspan=4>Tổng Tiền Cần Thanh Toán (won)</td><td class=num>1.243.000</td><td></td></tr></table></div><div class="evhint">👆 Bấm một dòng mặt hàng để xem bằng chứng (tin gốc); bấm ô “Thành tiền” để xem bảng giá chị Hiền (dòng món tô xanh).</div></section><section id="p1" class="pg" data-nguon="Kakao" data-nhom="Rau tp han viet"><h1>Rau tp han viet</h1><p class=sub>Nhóm: Rau tp han viet · còn nợ <b style="color:#C00000">624.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p2" class="pg" data-nguon="Kakao" data-nhom="nhóm diep"><h1>Ngọc Diệp</h1><p class=sub>Nhóm: nhóm diep · còn nợ <b style="color:#C00000">602.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p3" class="pg" data-nguon="Kakao" data-nhom="DUNG CHOT DON (28/6)"><h1>Dung</h1><p class=sub>Nhóm: DUNG CHOT DON (28/6) · còn nợ <b style="color:#C00000">67.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p4" class="pg" data-nguon="Kakao" data-nhom="🍎🍎 Gửi Đơn Hoa quả"><h1>🍎🍎 Gửi Đơn Hoa quả</h1><p class=sub>Nhóm: 🍎🍎 Gửi Đơn Hoa quả · còn nợ <b style="color:#C00000">260.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p5" class="pg" data-nguon="Kakao" data-nhom="Nhom rau vn"><h1>비엣트 🇻🇳🇰🇷</h1><p class=sub>Nhóm: Nhom rau vn · còn nợ <b style="color:#C00000">229.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p6" class="pg" data-nguon="Kakao" data-nhom="Chot đon e thanh"><h1>thanh</h1><p class=sub>Nhóm: Chot đon e thanh · còn nợ <b style="color:#C00000">251.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p7" class="pg" data-nguon="Kakao" data-nhom="Đơn hàng 5206"><h1>Đơn hàng 5206</h1><p class=sub>Nhóm: Đơn hàng 5206 · còn nợ <b style="color:#C00000">137.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p8" class="pg" data-nguon="Kakao" data-nhom="DUNG CHOT DON (21/6)"><h1>Dung</h1><p class=sub>Nhóm: DUNG CHOT DON (21/6) · còn nợ <b style="color:#C00000">259.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p9" class="pg" data-nguon="Kakao" data-nhom="Nhom trân ctv"><h1>Ngọc Trân</h1><p class=sub>Nhóm: Nhom trân ctv · còn nợ <b style="color:#C00000">58.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p10" class="pg" data-nguon="Kakao" data-nhom="Đặt hàng C Thanh Hien"><h1>Sỉ hàng Công ty</h1><p class=sub>Nhóm: Đặt hàng C Thanh Hien · còn nợ <b style="color:#C00000">48.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p11" class="pg" data-nguon="Kakao" data-nhom="Nhom linh ruby"><h1>PHƯƠNG LINH</h1><p class=sub>Nhóm: Nhom linh ruby · còn nợ <b style="color:#C00000">72.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p12" class="pg" data-nguon="Kakao" data-nhom="nhim 제인"><h1>Trang Trang</h1><p class=sub>Nhóm: nhim 제인 · còn nợ <b style="color:#C00000">320.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p13" class="pg" data-nguon="Kakao" data-nhom="hân"><h1>Trần Gia Hân 2</h1><p class=sub>Nhóm: hân · còn nợ <b style="color:#C00000">237.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p14" class="pg" data-nguon="Messenger FB" data-nhom="Nhóm rau vn"><h1>Việt Nam</h1><p class=sub>Nhóm: Nhóm rau vn (FB) · còn nợ <b style="color:#C00000">1.159.000 won</b></p><p class=note>Chưa có đơn.</p></section><section id="p15" class="pg" data-nguon="Messenger FB" data-nhom="Hàng nhà Tina"><h1>Tina</h1><p class=sub>Nhóm: Hàng nhà Tina (FB) · còn nợ <b style="color:#C00000">884.000 won</b></p><p class=note>Chưa có đơn.</p></section>
+<div class=foot>Sổ công nợ nhóm Rau (Kakao)</div>
+</div>
+<div id=lb onclick="this.classList.remove('on')"><span class=x>×</span><img id=lbi></div>
+<div id=evp onclick="this.classList.remove('on')"><div class=evbox onclick="event.stopPropagation()"><div id=evt></div><button class=eb onclick="document.getElementById('evp').classList.remove('on')">Đóng</button></div></div>
+<script>
+function go(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+ var el=document.getElementById(id);if(el)el.classList.add('on');
+ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+ var i=[...document.querySelectorAll('.tab')].find(t=>t.getAttribute('onclick').includes("'"+id+"'"));if(i)i.classList.add('on');
+ window.scrollTo(0,0);}
+function zoomu(img){document.getElementById('lbi').src=img.src;document.getElementById('lb').classList.add('on');}
+function mfilter(btn,m){var s=btn.closest('section');
+ s.querySelectorAll('.mf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+ s.querySelectorAll('.blk').forEach(e=>{if(!e.dataset.m)return;e.style.display=(m==='all'||e.dataset.m===m)?'':'none';});}
+function dcfilter(btn,m){var b=btn.closest('.dcbox');
+ b.querySelectorAll('.mf').forEach(x=>x.classList.remove('on'));btn.classList.add('on');
+ b.querySelectorAll('.dcr').forEach(function(r){r.style.display=(m!=='all'&&r.dataset.m===m)?'':'none';});
+ var t=b.querySelector('.dctot');if(t)t.style.display=(m==='all')?'':'none';}
+function ev(tr){if(document.body.classList.contains('editing')){return;}   /* dang sua -> bam o de sua, KHONG popup */
+ var d=(tr.dataset.ev||'');var tim=(tr.dataset.tim||'');
+ if(!d.trim()&&!tim.trim()){return;}                                        /* khong co bang chung -> bo qua */
+ var ngay=tr.cells[0].textContent.trim();
+ var nm=tr.querySelector('.pnm');var ten=(nm?nm.textContent:tr.cells[1].textContent).replace('⚠','').trim();
+ var b=document.getElementById('evt');b.innerHTML='';
+ var h=document.createElement('div');h.style.cssText='font-weight:600;font-size:15px';h.textContent=ten+(ngay?'  ·  '+ngay:'');
+ b.appendChild(h);
+ if(d.trim()){
+  var l=document.createElement('div');l.style.cssText='color:#999;font-size:12px;margin:10px 0 3px';l.textContent='Bằng chứng — ai nhắn · lúc nào:';
+  var p=document.createElement('div');p.style.cssText='color:#333';p.textContent=d;
+  b.appendChild(l);b.appendChild(p);}
+ if(tim.trim()){                                                            /* tim = nguyen van tin -> nut COPY + ⚠ doi chieu Zalo */
+  var l2=document.createElement('div');l2.style.cssText='color:#999;font-size:12px;margin:12px 0 3px';l2.textContent='Nội dung tin nhắn (bằng chứng):';
+  var q=document.createElement('div');q.style.cssText='color:#111;background:#f6f6f6;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;white-space:pre-wrap';q.textContent=tim;
+  var cb=document.createElement('button');cb.className='copytin';cb.textContent='📋 Copy tin — dán vào ô tìm kiếm Zalo';
+  cb.onclick=function(e){e.stopPropagation();var t=tim;
+   function ok(){cb.textContent='✓ Đã copy — mở Zalo, dán vào ô tìm kiếm để đối chiếu';}
+   function fb(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(_){}document.body.removeChild(ta);}
+   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb);}else{fb();}};
+  var note=document.createElement('div');note.style.cssText='color:#b26a00;font-size:12px;margin-top:6px';note.textContent='⚠ copy tin nhắn để đối chiếu lại trên Zalo (dán nội dung vào ô tìm kiếm).';
+  b.appendChild(l2);b.appendChild(q);b.appendChild(cb);b.appendChild(note);}
+ var im=tr.querySelector('img.evthumb')||tr.querySelector('img.thumb');   // evthumb = anh chup TIN NHAN (mon trung anh viet tay)
+ if(!im){var tbl=tr.closest('table');if(tbl){var tt=tbl.querySelector('tr.tot img.thumb');if(tt)im=tt;}}
+ if(im){var lb=document.createElement('div');lb.style.cssText='color:#999;font-size:12px;margin:12px 0 4px';lb.textContent='Ảnh bằng chứng:';
+  var i2=document.createElement('img');i2.src=im.src;i2.style.cssText='display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;cursor:pointer';i2.title='Bấm để đóng';i2.onclick=function(e){document.getElementById('evp').classList.remove('on');};
+  b.appendChild(lb);b.appendChild(i2);}
+ document.getElementById('evp').classList.add('on');}
+function _defm(g,fn){var bs=g.querySelectorAll('.mf');
+ if(bs.length>=2){fn(bs[1],bs[1].textContent.trim());}      /* nut THANG MOI NHAT (ngay sau 'Tất cả') = thang hien tai */
+ else if(bs.length){fn(bs[0],'all');}}
+document.querySelectorAll('.dcbox').forEach(function(b){_defm(b,dcfilter);});
+document.querySelectorAll('section .mfilter').forEach(function(mf){if(!mf.closest('.dcbox'))_defm(mf,mfilter);});
+</script>
+<span id="editbar"><span id="esave" style="display:none"><button onclick="saveEdit()">💾 Lưu (số + duyệt)</button><button onclick="cancelEdit()" class="ecancel">Huỷ</button></span><span id="emsg"></span></span>
+<style>#bgp{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:70;align-items:center;justify-content:center;padding:22px}#bgp.on{display:flex}.bgbox{background:#fff;border-radius:12px;padding:14px 16px;max-width:430px;width:100%;max-height:80vh;overflow:auto;line-height:1.55}.bgh{font-weight:700;margin-bottom:8px;color:#1F4E78;font-size:14px}.bgl{font-size:13px;padding:2px 7px;border-radius:5px;white-space:pre-wrap;color:#333}.bgl.on{background:#d6f7e4;color:#0b6b38;font-weight:700}.giacell{cursor:pointer;color:#1155CC;text-decoration:underline dotted}.bgx{margin-top:12px;padding:7px 16px;border:none;border-radius:8px;background:#1F6E43;color:#fff;cursor:pointer}</style><script>window.BG_STORE=[];function _bgesc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}window.bgpop=function(td){if(document.body.classList.contains('editing')){return;}var i=+td.getAttribute('data-bgi');var mon=(td.getAttribute('data-mon')||'').trim();var txt=(window.BG_STORE&&window.BG_STORE[i])||'';if(!txt){return;}var p=document.getElementById('bgp');if(!p){p=document.createElement('div');p.id='bgp';p.onclick=function(){p.classList.remove('on');};var b=document.createElement('div');b.className='bgbox';b.onclick=function(e){e.stopPropagation();};p.appendChild(b);document.body.appendChild(p);}var box=p.querySelector('.bgbox');var h='<div class=bgh>Bảng giá chị Hiền (gần nhất trước đơn) — dòng xanh là món này:</div>';txt.split(String.fromCharCode(10)).forEach(function(ln){var hl=ln.trim()&&ln.trim()===mon;h+='<div class="bgl'+(hl?' on':'')+'">'+_bgesc(ln)+'</div>';});box.innerHTML=h+'<button class=bgx id=bgxbtn>Đóng</button>';box.querySelector('#bgxbtn').onclick=function(){p.classList.remove('on');};p.classList.add('on');var el=box.querySelector('.bgl.on');if(el){el.scrollIntoView({block:'center'});}};</script><script>window.__AUTH={"v": 1, "alg": "AES-GCM", "kdf": "PBKDF2-SHA256", "iter": 310000, "salt": "mBbHxK3nb54wYGzy7OCpIg==", "iv": "ton0R8iyUy6ZPcdK", "ct": "7+hjY1XoQhomRWgAQlr1dnKMeY94LlCQ1ZGLmrsGpRcU9vLyAHWqZmeleZ/RDj1pIo29odUKSAQ="};window.__REPO={"owner": "lethithanhhien", "repo": "soketoan", "path": "rau/index.html"};
+(function(){
+ var AUTH=window.__AUTH, REPO=window.__REPO, TOKEN=null, PICKS={};
+ if(!AUTH||!REPO){return;}
+ function b64d(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);});}
+ function b64e(str){return btoa(unescape(encodeURIComponent(str)));}
+ async function dec(pw){
+  var km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64d(AUTH.salt),iterations:AUTH.iter,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+  var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64d(AUTH.iv)},key,b64d(AUTH.ct));
+  return new TextDecoder().decode(pt);
+ }
+ function msg(t){var m=document.getElementById('emsg'); if(m){m.textContent=t;}}
+ function pick(dk){ if(!PICKS[dk]){PICKS[dk]={};} return PICKS[dk]; }
+ function sel(dk){ return 'tr[data-dk="'+dk.replace(/"/g,'')+'"]'; }
+ window.enterEdit=async function(){
+  var pw=prompt('Nhập mật khẩu để sửa sổ:'); if(!pw){return;}
+  try{TOKEN=await dec(pw);}catch(e){alert('Sai mật khẩu.');return;}
+  document.body.classList.add('editing');
+  document.querySelectorAll('td.num[data-dk]').forEach(function(c){c.contentEditable='true';});
+  var sb=document.getElementById('esave'); if(sb){sb.style.display='inline';}
+  msg('Sửa ô tiền (nền vàng) hoặc bấm "✓ Đúng (duyệt)", xong bấm Lưu.');
+ };
+ window.cancelEdit=function(){location.reload();};
+ window.rauDuyet=function(btn){
+  if(!document.body.classList.contains('editing')){alert('Bấm 3 lần vào màn hình + nhập mật khẩu trước.');return;}
+  var tr=btn.closest('tr'); var dk=tr.getAttribute('data-dk'); if(!dk){return;}
+  var on=!tr.classList.contains('appd'); tr.classList.toggle('appd',on);
+  pick(dk).ok=on;
+  document.querySelectorAll(sel(dk)+' .tt-duyet').forEach(function(w){w.style.display=on?'none':'';});  // ẩn ⚠ ngay
+  btn.textContent=on?'✓ đã duyệt — bấm Lưu':'✓ Đúng (duyệt)';
+ };
+ document.addEventListener('input',function(e){
+  var td=e.target.closest?e.target.closest('td.num[data-dk]'):null; if(!td){return;}
+  var dk=td.getAttribute('data-dk'), ten=td.getAttribute('data-ten'), orig=parseInt(td.getAttribute('data-orig')||'0',10);
+  var v=parseInt((td.textContent||'').replace(/[^0-9]/g,''),10);
+  var p=pick(dk); if(!p.sua){p.sua={};}
+  if(isNaN(v)||v===orig){delete p.sua[ten];} else {p.sua[ten]=v; p.ok=true;}   // sửa khác số gốc -> ghi 'sua'
+ });
+ async function putFile(path, contentStr, mergeFn){
+  var api='https://api.github.com/repos/'+REPO.owner+'/'+REPO.repo+'/contents/'+path;
+  var sha=undefined, cur={};
+  var g=await fetch(api,{headers:{Authorization:'token '+TOKEN}});
+  if(g.ok){var gj=await g.json(); sha=gj.sha; if(mergeFn){try{cur=JSON.parse(decodeURIComponent(escape(atob((gj.content||'').replace(/\s/g,'')))));}catch(e){cur={};}}}
+  var out=mergeFn?JSON.stringify(mergeFn(cur||{}),null,2):contentStr;
+  var body={message:'sua/duyet so rau tren web',content:b64e(out)}; if(sha){body.sha=sha;}
+  var p=await fetch(api,{method:'PUT',headers:{Authorization:'token '+TOKEN,'Content-Type':'application/json'},body:JSON.stringify(body)});
+  return p.ok;
+ }
+ window.saveEdit=async function(){
+  if(!TOKEN){var pw=prompt('Nhập mật khẩu để lưu:'); if(!pw){return;} try{TOKEN=await dec(pw);}catch(e){alert('Sai mật khẩu.');return;}}
+  var keys=Object.keys(PICKS).filter(function(k){var p=PICKS[k];return p&&(p.ok||(p.sua&&Object.keys(p.sua).length));});
+  msg('Đang lưu...');
+  try{
+   if(keys.length){                                   // 1) quyết định (duyệt/sửa) -> quyetdinh_rau.json (merge)
+    var okj=await putFile('quyetdinh_rau.json', null, function(cur){
+      var m={}; for(var k in cur){m[k]=cur[k];}
+      keys.forEach(function(k){var d=(m[k]&&typeof m[k]==='object')?m[k]:{}; var p=PICKS[k];
+        if(p.ok){d.ok=true;} if(p.sua&&Object.keys(p.sua).length){d.sua=Object.assign(d.sua||{},p.sua);} m[k]=d;});
+      return m;});
+    if(!okj){msg('Lưu quyết định lỗi — chưa commit trang.');return;}
+   }
+   document.querySelectorAll('td.num[data-dk]').forEach(function(c){c.contentEditable='false';});
+   document.body.classList.remove('editing');
+   var sb=document.getElementById('esave'); if(sb){sb.style.display='none';}
+   var html='<!doctype html>'+document.documentElement.outerHTML;     // 2) commit trang (hiện ngay bản đã sửa)
+   var okh=await putFile(REPO.path, html, null);
+   msg(okh?'✓ Đã lưu. Vài phút nữa bản mới hiện; ⚠ đã duyệt sẽ HẾT HẲN sau lần "Lập sổ" tới.':'Lưu trang lỗi.');
+  }catch(e){msg('Lỗi mạng: '+e.message);}
+  TOKEN=null; PICKS={};
+ };
+ var _ec=0,_et=null;                                   // CLICK 3 LẦN liên tiếp (<600ms) -> hỏi mật khẩu
+ document.addEventListener('click',function(){
+  if(document.body.classList.contains('editing')){return;}
+  _ec++; clearTimeout(_et); _et=setTimeout(function(){_ec=0;},600);
+  if(_ec>=3){_ec=0;window.enterEdit();}
+ });
+})();
+</script></body></html>
