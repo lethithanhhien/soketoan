@@ -213,7 +213,7 @@ document.querySelectorAll('section .mfilter').forEach(function(mf){if(!mf.closes
  window.addRow=function(btn){                         // THÊM 1 dòng món trống vào đơn (chèn trước nút ➕)
   if(!document.body.classList.contains('editing')){return;}
   var tr=btn.closest('tr.addrow'); if(!tr){return;} var dk=tr.getAttribute('data-dk');
-  var anh=document.querySelectorAll('tr.dh th').length>6;
+  var tbl=tr.closest('table.det'); var anh=!!(tbl&&tbl.querySelectorAll('tr.dh th').length>6);  // ĐẾM trong ĐÚNG bảng này (không phải toàn trang nhiều CTV)
   var nr=document.createElement('tr'); nr.className='irow'; nr.setAttribute('data-dk',dk);
   nr.innerHTML='<td class=macol></td>'
    +'<td class=spcol><span class=spname contenteditable="true"></span>'
