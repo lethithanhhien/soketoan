@@ -1,0 +1,41 @@
+{
+  "nhomrauvn(fb)|vietnam|K2|2026-06-27": {
+    "khoa_items": [
+      {
+        "ten": "Móc mật",
+        "so_luong": "1kg",
+        "tien": 13000
+      },
+      {
+        "ten": "Lá giang",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "Lá sung",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "Lá sung (thiếu)",
+        "so_luong": "",
+        "tien": -8500
+      },
+      {
+        "ten": "Doc mung",
+        "so_luong": "2kg",
+        "tien": 18000
+      },
+      {
+        "ten": "Thì là",
+        "so_luong": "1kg",
+        "tien": 13000
+      },
+      {
+        "ten": "Tắc",
+        "so_luong": "2kg",
+        "tien": 42000
+      }
+    ]
+  }
+}
