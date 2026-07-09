@@ -37,5 +37,24 @@
         "tien": 42000
       }
     ]
+  },
+  "nhomrauvn(fb)|vietnam|K7|2026-06-27": {
+    "khoa_items": [
+      {
+        "ten": "ớt tươi",
+        "so_luong": "2 kg",
+        "tien": 50000
+      },
+      {
+        "ten": "lạc",
+        "so_luong": "2 kg",
+        "tien": 20000
+      },
+      {
+        "ten": "thì là",
+        "so_luong": "1 kg",
+        "tien": 14000
+      }
+    ]
   }
 }
