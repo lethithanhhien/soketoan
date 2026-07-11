@@ -1,5 +1,24 @@
 {
   "hangnhatina(fb)|tina|TINA 01/07|2026-06-27": {
     "ok": true
+  },
+  "nhomrauvn(fb)|vietnam|K1|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "2kg ớt",
+        "so_luong": "2kg",
+        "tien": 50000
+      },
+      {
+        "ten": "ngò gai",
+        "so_luong": "2kg",
+        "tien": 0
+      },
+      {
+        "ten": "lá dứa",
+        "so_luong": "1kg",
+        "tien": 12000
+      }
+    ]
   }
 }
