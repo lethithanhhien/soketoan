@@ -120,5 +120,52 @@
         "tien": 22000
       }
     ]
+  },
+  "han|trangiahan2|HÂN2|2026-07-04": {
+    "ok": true,
+    "khoa_items": [
+      {
+        "ten": "lá nốt lá",
+        "so_luong": "500g",
+        "tien": 6000
+      },
+      {
+        "ten": "kinh giới",
+        "so_luong": "500g",
+        "tien": 6000
+      },
+      {
+        "ten": "tía tô",
+        "so_luong": "500g",
+        "tien": 6000
+      },
+      {
+        "ten": "thì là",
+        "so_luong": "500g",
+        "tien": 7000
+      },
+      {
+        "ten": "Thecbe",
+        "so_luong": "1",
+        "tien": 5000
+      }
+    ]
+  },
+  "han|trangiahan2|HÂN3|2026-07-04": {
+    "ok": true
+  },
+  "han|trangiahan2|HÂN4|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "tắc tươi",
+        "so_luong": "500g",
+        "tien": 12000
+      },
+      {
+        "ten": "Thecbe",
+        "so_luong": "1",
+        "tien": 5000
+      }
+    ]
   }
 }
