@@ -693,5 +693,24 @@
         "tien": -15000
       }
     ]
+  },
+  "rautphanviet|tuanh|10|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "Bông súng",
+        "so_luong": "3kg",
+        "tien": 33000
+      },
+      {
+        "ten": "Ngò gai",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "bông súng",
+        "so_luong": "-586g",
+        "tien": 0
+      }
+    ]
   }
 }
