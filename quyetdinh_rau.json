@@ -106,5 +106,19 @@
         "tien": 37000
       }
     ]
+  },
+  "dathangcthanhhien|sihangcongty|6/7/4|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "ngò gai",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "ngò ôm",
+        "so_luong": "2kg",
+        "tien": 22000
+      }
+    ]
   }
 }
