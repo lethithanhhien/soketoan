@@ -293,5 +293,90 @@
         "tien": -5000
       }
     ]
+  },
+  "🍎🍎guidonhoaqua|은하|Đ5|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "cá lóc",
+        "so_luong": "1kg",
+        "tien": 13000
+      },
+      {
+        "ten": "dưa chua",
+        "so_luong": "1kg",
+        "tien": 8000
+      },
+      {
+        "ten": "lá lốt . Thì là. Ngò ôm",
+        "so_luong": "500g",
+        "tien": 6000
+      },
+      {
+        "ten": "Thecbe",
+        "so_luong": "1",
+        "tien": 5000
+      }
+    ]
+  },
+  "🍎🍎guidonhoaqua|은하|Đ10|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "nhãn",
+        "so_luong": "1.2kg",
+        "tien": 29000
+      },
+      {
+        "ten": "ổi",
+        "so_luong": "1kg",
+        "tien": 24000
+      },
+      {
+        "ten": "thecbe",
+        "so_luong": "",
+        "tien": 5000
+      }
+    ]
+  },
+  "🍎🍎guidonhoaqua|은하|Đ12|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "nhãn",
+        "so_luong": "1kg",
+        "tien": 24000
+      },
+      {
+        "ten": "ổi x",
+        "so_luong": "1.2kg",
+        "tien": 32000
+      },
+      {
+        "ten": "Tb",
+        "so_luong": "",
+        "tien": 5000
+      }
+    ]
+  },
+  "dungchotdon|dung|K6|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "xoài non",
+        "so_luong": "20kg",
+        "tien": 376000
+      }
+    ]
+  },
+  "dungchotdon|dung|K7|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "xoài",
+        "so_luong": "2kg",
+        "tien": 42000
+      },
+      {
+        "ten": "thecbe",
+        "so_luong": "1",
+        "tien": 5000
+      }
+    ]
   }
 }
