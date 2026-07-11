@@ -10,12 +10,80 @@
         "tien": 50000
       },
       {
-        "ten": "ngò gai",
-        "so_luong": "2kg",
-        "tien": 0
+        "ten": "lá dứa",
+        "so_luong": "1kg",
+        "tien": 12000
+      }
+    ]
+  },
+  "nhomrauvn(fb)|vietnam|K2|2026-07-04": {
+    "ok": true
+  },
+  "nhomrauvn(fb)|vietnam|K4|2026-07-04": {
+    "ok": true
+  },
+  "nhomrauvn(fb)|vietnam|K5|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "cù nèo",
+        "so_luong": "3kg",
+        "tien": 33000
       },
       {
-        "ten": "lá dứa",
+        "ten": "rau nhút",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "hàng hỏng",
+        "so_luong": "",
+        "tien": -12000
+      }
+    ]
+  },
+  "nhomrauvn(fb)|vietnam|K9|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "lá giang",
+        "so_luong": "1.5kg",
+        "tien": 18000
+      },
+      {
+        "ten": "diếp cá",
+        "so_luong": "1.5kg",
+        "tien": 17000
+      },
+      {
+        "ten": "răm",
+        "so_luong": "2kg",
+        "tien": 22000
+      }
+    ]
+  },
+  "nhomrauvn(fb)|vietnam|K17|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "rau mùi tàu",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "Rau răm",
+        "so_luong": "1kg",
+        "tien": 11000
+      },
+      {
+        "ten": "rau bạc hà",
+        "so_luong": "1kg",
+        "tien": 8000
+      },
+      {
+        "ten": "rau mùi",
+        "so_luong": "1kg",
+        "tien": 11000
+      },
+      {
+        "ten": "lá mơ",
         "so_luong": "1kg",
         "tien": 12000
       }
