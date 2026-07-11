@@ -371,11 +371,6 @@
         "ten": "xoài",
         "so_luong": "2kg",
         "tien": 42000
-      },
-      {
-        "ten": "thecbe",
-        "so_luong": "1",
-        "tien": 5000
       }
     ]
   },
@@ -384,12 +379,7 @@
       {
         "ten": "1con cá tầm xách tay",
         "so_luong": "2.66kg",
-        "tien": 51000
-      },
-      {
-        "ten": "Thecbe",
-        "so_luong": "1",
-        "tien": 5000
+        "tien": 48000
       }
     ]
   },
@@ -751,7 +741,7 @@
       {
         "ten": "con cá tầm",
         "so_luong": "3.16kg",
-        "tien": 60000
+        "tien": 57000
       },
       {
         "ten": "Dưa chua",
@@ -762,11 +752,6 @@
         "ten": "nghệ tươi",
         "so_luong": "1kg",
         "tien": 0
-      },
-      {
-        "ten": "Thecbe",
-        "so_luong": "1",
-        "tien": 5000
       }
     ]
   },
@@ -780,6 +765,62 @@
       {
         "ten": "thecbe",
         "so_luong": "",
+        "tien": 5000
+      }
+    ]
+  },
+  "dungchotdon|dung|K19|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "xoài",
+        "so_luong": "1kg",
+        "tien": 21000
+      },
+      {
+        "ten": "nhãn",
+        "so_luong": "1kg",
+        "tien": 24000
+      }
+    ]
+  },
+  "dungchotdon|dung|K20|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "xoai non cứng",
+        "so_luong": "2kg",
+        "tien": 42000
+      }
+    ]
+  },
+  "dungchotdon|dung|K21|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "cóc",
+        "so_luong": "2kg",
+        "tien": 46000
+      },
+      {
+        "ten": "Na",
+        "so_luong": "0.5kg",
+        "tien": 0
+      },
+      {
+        "ten": "khô mực",
+        "so_luong": "1kg",
+        "tien": 60000
+      }
+    ]
+  },
+  "dungchotdon|dung|K29|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "Xoài non",
+        "so_luong": "1kg",
+        "tien": 21000
+      },
+      {
+        "ten": "Thecbe",
+        "so_luong": "1",
         "tien": 5000
       }
     ]
