@@ -97,5 +97,14 @@
         "tien": 46000
       }
     ]
+  },
+  "nhomlinhruby|phuonglinh|K2|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "măng nứa",
+        "so_luong": "5kg",
+        "tien": 60000
+      }
+    ]
   }
 }
