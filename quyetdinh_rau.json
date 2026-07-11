@@ -709,7 +709,31 @@
       {
         "ten": "bông súng",
         "so_luong": "-586g",
-        "tien": 0
+        "tien": -6000
+      }
+    ]
+  },
+  "rautphanviet|tuanh|4|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "gai",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "ớt",
+        "so_luong": "2kg",
+        "tien": 50000
+      },
+      {
+        "ten": "lốt lá",
+        "so_luong": "1kg",
+        "tien": 13000
+      },
+      {
+        "ten": "ớt hỏng",
+        "so_luong": "-745gr",
+        "tien": -18000
       }
     ]
   }
