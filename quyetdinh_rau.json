@@ -378,5 +378,121 @@
         "tien": 5000
       }
     ]
+  },
+  "nhomtranctv|ngoctran|D1|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "1con cá tầm xách tay",
+        "so_luong": "2.5kg",
+        "tien": 0
+      },
+      {
+        "ten": "Thecbe",
+        "so_luong": "1",
+        "tien": 5000
+      }
+    ]
+  },
+  "nhomrauvn|비엣트|VT7|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "Ngò rai",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "Bạc hà",
+        "so_luong": "2kg",
+        "tien": 16000
+      },
+      {
+        "ten": "Ớt",
+        "so_luong": "1kg",
+        "tien": 25000
+      }
+    ]
+  },
+  "nhomrauvn|비엣트|VT10|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "Dũi hàn",
+        "so_luong": "500g",
+        "tien": 5000
+      },
+      {
+        "ten": "Gai",
+        "so_luong": "500g",
+        "tien": 6000
+      },
+      {
+        "ten": "Ớt",
+        "so_luong": "1,5kg",
+        "tien": 38000
+      },
+      {
+        "ten": "Lá mơ",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "Răm han",
+        "so_luong": "1,5kg",
+        "tien": 17000
+      },
+      {
+        "ten": "Bạc hà",
+        "so_luong": "500g",
+        "tien": 4000
+      },
+      {
+        "ten": "Kinh gioi",
+        "so_luong": "500g",
+        "tien": 6000
+      },
+      {
+        "ten": "Trừ hàng hỏng cho khách",
+        "so_luong": "",
+        "tien": -3000
+      }
+    ]
+  },
+  "nhomrauvn|비엣트|VT14|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "Bắp chuối",
+        "so_luong": "1kg",
+        "tien": 0
+      },
+      {
+        "ten": "Lui",
+        "so_luong": "1kg",
+        "tien": 10000
+      },
+      {
+        "ten": "Ram",
+        "so_luong": "1kg",
+        "tien": 11000
+      },
+      {
+        "ten": "Rí",
+        "so_luong": "1kg",
+        "tien": 11000
+      },
+      {
+        "ten": "Ot",
+        "so_luong": "1kg",
+        "tien": 25000
+      },
+      {
+        "ten": "Gai",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "Mơ",
+        "so_luong": "1kg",
+        "tien": 12000
+      }
+    ]
   }
 }
