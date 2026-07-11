@@ -167,5 +167,83 @@
         "tien": 5000
       }
     ]
+  },
+  "nhomdiep|ngocdiep|D3|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "vỉ cá ba sa",
+        "so_luong": "1",
+        "tien": 4000
+      },
+      {
+        "ten": "Tắc tươi",
+        "so_luong": "",
+        "tien": 4000
+      },
+      {
+        "ten": "Thecbe",
+        "so_luong": "1",
+        "tien": 5000
+      }
+    ]
+  },
+  "nhomdiep|ngocdiep|D6|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "con nui",
+        "so_luong": "1kg",
+        "tien": 10000
+      },
+      {
+        "ten": "măng chua",
+        "so_luong": "1kg",
+        "tien": 8000
+      },
+      {
+        "ten": "bánh tráng bò bía",
+        "so_luong": "2 5k",
+        "tien": 5000
+      },
+      {
+        "ten": "dầu hào",
+        "so_luong": "1kg",
+        "tien": 3000
+      },
+      {
+        "ten": "nam ngư nhỏ",
+        "so_luong": "1kg",
+        "tien": 3000
+      },
+      {
+        "ten": "ngò gai",
+        "so_luong": "",
+        "tien": 3000
+      },
+      {
+        "ten": "Chuối bào",
+        "so_luong": "",
+        "tien": 5000
+      },
+      {
+        "ten": "đậu que",
+        "so_luong": "500g",
+        "tien": 3000
+      },
+      {
+        "ten": "bí đao",
+        "so_luong": "0.77kg",
+        "tien": 4000
+      },
+      {
+        "ten": "xả",
+        "so_luong": "500g",
+        "tien": 3000
+      },
+      {
+        "ten": "nấm mèo",
+        "so_luong": "1gói",
+        "tien": 3000
+      }
+    ]
   }
 }
