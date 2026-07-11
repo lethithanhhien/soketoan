@@ -383,8 +383,8 @@
     "khoa_items": [
       {
         "ten": "1con cá tầm xách tay",
-        "so_luong": "2.5kg",
-        "tien": 0
+        "so_luong": "2.66kg",
+        "tien": 51000
       },
       {
         "ten": "Thecbe",
@@ -743,6 +743,44 @@
         "ten": "nhãn",
         "so_luong": "3kg",
         "tien": 72000
+      }
+    ]
+  },
+  "nhomtranctv|ngoctran|D2|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "con cá tầm",
+        "so_luong": "3.16kg",
+        "tien": 60000
+      },
+      {
+        "ten": "Dưa chua",
+        "so_luong": "1kg",
+        "tien": 8000
+      },
+      {
+        "ten": "nghệ tươi",
+        "so_luong": "1kg",
+        "tien": 0
+      },
+      {
+        "ten": "Thecbe",
+        "so_luong": "1",
+        "tien": 5000
+      }
+    ]
+  },
+  "nhomtranctv|ngoctran|ĐƠN3|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "hành tăm",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "thecbe",
+        "so_luong": "",
+        "tien": 5000
       }
     ]
   }
