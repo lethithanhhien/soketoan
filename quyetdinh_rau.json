@@ -494,5 +494,204 @@
         "tien": 12000
       }
     ]
+  },
+  "chotdonthuytran|thuytran|K6|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "xoai non",
+        "so_luong": "10kg",
+        "tien": 185000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K9|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "đậu xanh ko vot",
+        "so_luong": "23.18kg",
+        "tien": 127000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K13|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "Omachi 3 suon 2 bo",
+        "so_luong": "5 thùng",
+        "tien": 0
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K27|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "Ot xanh",
+        "so_luong": "10kg",
+        "tien": 210000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K38|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "thi la",
+        "so_luong": "2kg",
+        "tien": 26000
+      },
+      {
+        "ten": "kinh gioi",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "la sung",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "la mơ",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "la dứa",
+        "so_luong": "1kg",
+        "tien": 12000
+      },
+      {
+        "ten": "kinh giới hỏng",
+        "so_luong": "800gr",
+        "tien": -9000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K22|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "ớt",
+        "so_luong": "5kg",
+        "tien": 110000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K46|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "ngo om",
+        "so_luong": "1ky",
+        "tien": 11000
+      },
+      {
+        "ten": "thi là",
+        "so_luong": "1ky",
+        "tien": 13000
+      },
+      {
+        "ten": "ngo gai",
+        "so_luong": "1ky",
+        "tien": 12000
+      },
+      {
+        "ten": "gấp cá",
+        "so_luong": "1kg",
+        "tien": 11000
+      },
+      {
+        "ten": "ky ot",
+        "so_luong": "1ky",
+        "tien": 25000
+      },
+      {
+        "ten": "không gửi ớt",
+        "so_luong": "1ky",
+        "tien": -25000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K42|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "tắc",
+        "so_luong": "5",
+        "tien": 95000
+      },
+      {
+        "ten": "ớt",
+        "so_luong": "5",
+        "tien": 125000
+      },
+      {
+        "ten": "ớt thiếu",
+        "so_luong": "4",
+        "tien": -100000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K48|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "rí Hàn",
+        "so_luong": "1kg",
+        "tien": 11000
+      },
+      {
+        "ten": "ớt vn",
+        "so_luong": "1kg",
+        "tien": 25000
+      },
+      {
+        "ten": "ngò gai",
+        "so_luong": "0.5kg",
+        "tien": 6000
+      },
+      {
+        "ten": "lá mơ",
+        "so_luong": "0.5kg",
+        "tien": 6000
+      },
+      {
+        "ten": "tía tô",
+        "so_luong": "0.5kg",
+        "tien": 6000
+      },
+      {
+        "ten": "Rí hư",
+        "so_luong": "1kg",
+        "tien": -11000
+      },
+      {
+        "ten": "ớt hư",
+        "so_luong": "150gr",
+        "tien": -3000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K18|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "ot",
+        "so_luong": "9.9kg",
+        "tien": 210000
+      },
+      {
+        "ten": "ớt hư",
+        "so_luong": "1.2kg",
+        "tien": -25000
+      }
+    ]
+  },
+  "chotdonthuytran|thuytran|K31|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "ot",
+        "so_luong": "5kg",
+        "tien": 110000
+      },
+      {
+        "ten": "ớt hỏng",
+        "so_luong": "700gr",
+        "tien": -15000
+      }
+    ]
   }
 }
