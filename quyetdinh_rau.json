@@ -736,5 +736,14 @@
         "tien": -18000
       }
     ]
+  },
+  "maymandenvoiminh,hangnga,maymanvabinhan,colee,thanhthao,...|thanhthao|K3|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "nhãn",
+        "so_luong": "3kg",
+        "tien": 72000
+      }
+    ]
   }
 }
