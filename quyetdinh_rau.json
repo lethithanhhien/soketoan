@@ -245,5 +245,53 @@
         "tien": 3000
       }
     ]
+  },
+  "chotdonethanh|thanh|K1|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "ngo gai",
+        "so_luong": "5kg",
+        "tien": 48000
+      },
+      {
+        "ten": "hanh tam",
+        "so_luong": "2kg",
+        "tien": 24000
+      },
+      {
+        "ten": "chuoi bao",
+        "so_luong": "1.5kg",
+        "tien": 18000
+      },
+      {
+        "ten": "tat",
+        "so_luong": "1kg",
+        "tien": 21000
+      }
+    ]
+  },
+  "chotdonethanh|thanh|K2|2026-07-04": {
+    "khoa_items": [
+      {
+        "ten": "ớt",
+        "so_luong": "1",
+        "tien": 25000
+      },
+      {
+        "ten": "gai",
+        "so_luong": "1",
+        "tien": 12000
+      },
+      {
+        "ten": "chuối bào",
+        "so_luong": "3",
+        "tien": 36000
+      },
+      {
+        "ten": "ớt trừ cho khách",
+        "so_luong": "",
+        "tien": -5000
+      }
+    ]
   }
 }
